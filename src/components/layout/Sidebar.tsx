@@ -49,7 +49,7 @@ function MetricGauge({ label, value, displayValue, color }: {
   );
 }
 
-export function Sidebar() {
+export function Sidebar({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) {
   const pathname = usePathname();
   const [saveLoadOpen, setSaveLoadOpen] = useState(false);
   const [pdfExporting, setPdfExporting] = useState(false);
@@ -141,7 +141,7 @@ export function Sidebar() {
   };
 
   return (
-    <aside className="w-64 bg-sidebar-bg text-white flex flex-col shrink-0">
+    <aside className={`w-64 bg-sidebar-bg text-white flex flex-col shrink-0 fixed inset-y-0 left-0 z-50 transition-[translate] duration-200 ease-in-out md:relative md:translate-x-0 ${isOpen ? 'translate-x-0' : '-translate-x-full'}`}>
       {/* Header */}
       <div className="p-4 border-b border-blue-800">
         <div className="flex items-center gap-2 mb-1">
@@ -160,6 +160,7 @@ export function Sidebar() {
         {/* Home link */}
         <Link
           href="/"
+          onClick={onClose}
           className={`flex items-center gap-3 px-3 py-2.5 mx-2 mb-2 rounded-lg text-sm transition-colors ${
             pathname === '/'
               ? 'bg-white/15 text-white font-semibold'
@@ -183,6 +184,7 @@ export function Sidebar() {
               <li key={step.path}>
                 <Link
                   href={step.path}
+                  onClick={onClose}
                   className={`flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm transition-colors ${
                     isActive
                       ? 'bg-white/15 text-white font-semibold'

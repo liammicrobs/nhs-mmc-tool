@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
-import { Sidebar } from "@/components/layout/Sidebar";
+import { LayoutShell } from "@/components/layout/LayoutShell";
 import { InstallBanner } from "@/components/ui/InstallBanner";
 
 export const viewport: Viewport = {
@@ -32,13 +32,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="antialiased">
-        <div className="flex h-screen overflow-hidden">
-          <Sidebar />
-          <main className="flex-1 overflow-y-auto bg-nhs-pale-grey">
-            <div className="max-w-5xl mx-auto px-6 py-8">
-              {children}
-            </div>
-          </main>
+        <div className="flex flex-col h-screen overflow-hidden">
+          <LayoutShell>
+            {children}
+          </LayoutShell>
         </div>
         <InstallBanner />
       </body>
