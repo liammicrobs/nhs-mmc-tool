@@ -151,9 +151,28 @@ export function Sidebar() {
 
       {/* Navigation */}
       <nav className="flex-1 py-4 overflow-y-auto">
+        {/* Home link */}
+        <Link
+          href="/"
+          className={`flex items-center gap-3 px-3 py-2.5 mx-2 mb-2 rounded-lg text-sm transition-colors ${
+            pathname === '/'
+              ? 'bg-white/15 text-white font-semibold'
+              : 'text-blue-200 hover:bg-white/10 hover:text-white'
+          }`}
+        >
+          <span className={`w-6 h-6 rounded-full flex items-center justify-center ${
+            pathname === '/' ? 'bg-white text-nhs-dark-blue' : 'bg-blue-800 text-blue-300'
+          }`}>
+            <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 12l8.954-8.955a1.126 1.126 0 011.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
+            </svg>
+          </span>
+          Home
+        </Link>
+        <div className="border-b border-blue-800 mx-4 mb-2" />
         <ul className="space-y-1 px-2">
           {STEPS.map((step) => {
-            const isActive = pathname === step.path || (pathname === '/' && step.number === 1);
+            const isActive = pathname === step.path;
             return (
               <li key={step.path}>
                 <Link
