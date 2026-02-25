@@ -141,9 +141,9 @@ export function Sidebar({ isOpen, onClose }: { isOpen: boolean; onClose: () => v
   };
 
   return (
-    <aside className={`w-64 bg-sidebar-bg text-white flex flex-col shrink-0 fixed inset-y-0 left-0 z-50 transition-[translate] duration-200 ease-in-out md:relative md:translate-x-0 ${isOpen ? 'translate-x-0' : '-translate-x-full'}`}>
+    <aside className={`w-64 bg-sidebar-bg text-white flex flex-col shrink-0 fixed inset-y-0 left-0 z-50 transition-[translate] duration-200 ease-in-out md:relative md:translate-x-0 overflow-y-auto ${isOpen ? 'translate-x-0' : '-translate-x-full'}`}>
       {/* Header */}
-      <div className="p-4 border-b border-blue-800">
+      <div className="p-4 border-b border-blue-800 shrink-0">
         <div className="flex items-center gap-2 mb-1">
           <div className="w-8 h-8 bg-white rounded flex items-center justify-center">
             <span className="text-nhs-blue font-bold text-sm">NHS</span>
@@ -156,7 +156,7 @@ export function Sidebar({ isOpen, onClose }: { isOpen: boolean; onClose: () => v
       </div>
 
       {/* Navigation */}
-      <nav className="flex-1 py-4 overflow-y-auto">
+      <nav className="flex-1 py-4">
         {/* Home link */}
         <Link
           href="/"
@@ -205,7 +205,7 @@ export function Sidebar({ isOpen, onClose }: { isOpen: boolean; onClose: () => v
       </nav>
 
       {/* Live Metrics */}
-      <div className="mx-3 my-4 p-4 bg-white/10 rounded-xl ring-1 ring-white/10">
+      <div className="mx-3 my-4 p-4 bg-white/10 rounded-xl ring-1 ring-white/10 shrink-0">
         <div className="flex items-center gap-2 mb-3">
           <span className="flex items-center gap-1.5 px-2 py-0.5 bg-green-500/20 rounded-full">
             <span className="w-1.5 h-1.5 bg-green-400 rounded-full animate-pulse" />
@@ -239,7 +239,7 @@ export function Sidebar({ isOpen, onClose }: { isOpen: boolean; onClose: () => v
       </div>
 
       {/* Actions */}
-      <div className="p-4 border-t border-blue-800 space-y-2">
+      <div className="p-4 border-t border-blue-800 space-y-2 shrink-0">
         <button
           onClick={handleExportPDF}
           disabled={pdfExporting}
