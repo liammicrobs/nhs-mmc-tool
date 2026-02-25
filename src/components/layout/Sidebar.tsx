@@ -8,6 +8,8 @@ import { computeCategory0Total } from '@/lib/calculations/category0';
 import { computeTotalPMV, allCarbonChecksPass } from '@/lib/calculations/pmv';
 import { computeCategory7Score } from '@/lib/calculations/category7';
 import { computeOverallMMC } from '@/lib/calculations/executive-summary';
+import { MMCAssessmentSchema } from '@/lib/validation/assessment-schema';
+import type { MMCAssessmentState } from '@/types';
 
 const STEPS = [
   { path: '/project-details', label: 'Project Details', number: 1 },
@@ -33,11 +35,11 @@ function MetricGauge({ label, value, displayValue, color }: {
 }) {
   return (
     <div className="mb-3">
-      <div className="flex justify-between text-xs mb-1">
+      <div className="flex justify-between text-sm mb-1">
         <span className="text-blue-200">{label}</span>
-        <span className="font-bold text-white">{displayValue ?? `${value.toFixed(1)}%`}</span>
+        <span className="font-bold" style={{ color }}>{displayValue ?? `${value.toFixed(1)}%`}</span>
       </div>
-      <div className="w-full h-2 bg-blue-900/50 rounded-full overflow-hidden">
+      <div className="w-full h-2.5 bg-blue-900/50 rounded-full overflow-hidden">
         <div
           className="h-full rounded-full transition-all duration-500"
           style={{ width: `${Math.min(100, Math.max(0, value))}%`, backgroundColor: color }}
@@ -107,8 +109,13 @@ export function Sidebar() {
       const reader = new FileReader();
       reader.onload = () => {
         try {
-          const data = JSON.parse(reader.result as string);
-          useMMCStore.getState().loadAssessment(data);
+          const raw = JSON.parse(reader.result as string);
+          const result = MMCAssessmentSchema.safeParse(raw);
+          if (!result.success) {
+            alert('Invalid assessment file. The file structure does not match the expected format.');
+            return;
+          }
+          useMMCStore.getState().loadAssessment(result.data as MMCAssessmentState);
         } catch {
           alert('Invalid file format. Please select a valid .mmc.json file.');
         }
@@ -126,8 +133,7 @@ export function Sidebar() {
       const { generateAndDownloadReport } = await import('@/lib/pdf/ReportGenerator');
       const state = useMMCStore.getState().getState();
       await generateAndDownloadReport(state);
-    } catch (err) {
-      console.error('PDF export failed:', err);
+    } catch {
       alert('PDF export failed. Please try again.');
     } finally {
       setPdfExporting(false);
@@ -197,8 +203,14 @@ export function Sidebar() {
       </nav>
 
       {/* Live Metrics */}
-      <div className="p-4 border-t border-blue-800">
-        <h3 className="text-xs font-semibold text-blue-300 uppercase tracking-wider mb-3">Live Metrics</h3>
+      <div className="mx-3 my-4 p-4 bg-white/10 rounded-xl ring-1 ring-white/10">
+        <div className="flex items-center gap-2 mb-3">
+          <span className="flex items-center gap-1.5 px-2 py-0.5 bg-green-500/20 rounded-full">
+            <span className="w-1.5 h-1.5 bg-green-400 rounded-full animate-pulse" />
+            <span className="text-[10px] font-bold text-green-300 uppercase tracking-widest">Live</span>
+          </span>
+          <span className="text-xs font-semibold text-blue-300 uppercase tracking-wider">Metrics</span>
+        </div>
         <MetricGauge label="Cat 0" value={cat0Pct} color={ragColor(cat0Pct)} />
         <MetricGauge
           label="PMV"
@@ -207,12 +219,12 @@ export function Sidebar() {
           color={carbonPass ? ragColor(pmvPct) : 'var(--rag-red, #da291c)'}
         />
         <MetricGauge label="Cat 7" value={cat7Pct} color={ragColor(cat7Pct)} />
-        <div className="mt-3 pt-3 border-t border-blue-800">
-          <div className="flex justify-between text-sm">
-            <span className="text-blue-200">Overall</span>
-            <span className="font-bold text-white">{overallPct.toFixed(1)}%</span>
+        <div className="mt-4 pt-4 border-t border-white/10">
+          <div className="flex items-baseline justify-between mb-1.5">
+            <span className="text-sm text-blue-200">Overall</span>
+            <span className="text-2xl font-bold" style={{ color: ragColor(overallPct) }}>{overallPct.toFixed(1)}%</span>
           </div>
-          <div className="w-full h-2 bg-blue-900/50 rounded-full overflow-hidden mt-1">
+          <div className="w-full h-3 bg-blue-900/50 rounded-full overflow-hidden">
             <div
               className="h-full rounded-full transition-all duration-500"
               style={{
