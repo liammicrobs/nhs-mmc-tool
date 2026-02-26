@@ -2,9 +2,9 @@
 
 import React from 'react';
 import { Document, Page, Text, View, StyleSheet, Svg, Path } from '@react-pdf/renderer';
-import type { MMCAssessmentState, RAGStatus, BenefitCategory, SectionPMV } from '@/types';
-import { computeCategory0Total, computeSubcategoryScore } from '@/lib/calculations/category0';
-import { computeTotalPMV, computeSectionPMV, allCarbonChecksPass } from '@/lib/calculations/pmv';
+import type { MMCAssessmentState, RAGStatus, BenefitCategory, SectionPMV, PMVSection } from '@/types';
+import { computeCategory0Total, computeSubcategoryScore, computeCategory0ItemScore } from '@/lib/calculations/category0';
+import { computeTotalPMV, computeSectionPMV, allCarbonChecksPass, computeElementPMV, computePackagePMV, computeElementProjectContribution } from '@/lib/calculations/pmv';
 import { computeCategory7Score } from '@/lib/calculations/category7';
 import {
   computeExecutiveSummary,
@@ -66,6 +66,34 @@ function sectionLabel(section: string): string {
   if (section === 'structure') return 'Structure';
   if (section === 'architecture') return 'Architecture';
   return 'Building Services';
+}
+
+function buildTypeLabel(bt: string): string {
+  if (bt === 'new_build') return 'New Build';
+  if (bt === 'refurbishment') return 'Refurbishment';
+  return 'Mixed';
+}
+
+function businessCaseStageLabel(stage: string): string {
+  const labels: Record<string, string> = { na: 'N/A', soc: 'SOC', obc: 'OBC', fbc: 'FBC', pc: 'Post-Completion' };
+  return labels[stage] || stage.toUpperCase();
+}
+
+function ribaStageLabel(stage: string): string {
+  return `RIBA ${stage}`;
+}
+
+function typologyLabel(t: string): string {
+  const labels: Record<string, string> = {
+    acute: 'Acute', primary_care: 'Primary Care', specialist: 'Specialist',
+    mental_health: 'Mental Health', infrastructure: 'Infrastructure', other: 'Other',
+  };
+  return labels[t] || t;
+}
+
+function truncateText(text: string, maxLen: number): string {
+  if (!text || text.length <= maxLen) return text || '';
+  return text.slice(0, maxLen) + '...';
 }
 
 const styles = StyleSheet.create({
@@ -294,6 +322,83 @@ const styles = StyleSheet.create({
     fontFamily: 'Helvetica-Bold',
     color: NHS_DARK_BLUE,
     marginBottom: 2,
+  },
+  // Appendix styles
+  appendixTitle: {
+    fontSize: 16,
+    fontFamily: 'Helvetica-Bold',
+    color: NHS_DARK_BLUE,
+    marginBottom: 6,
+    paddingBottom: 4,
+    borderBottomWidth: 2,
+    borderBottomColor: NHS_BLUE,
+  },
+  appendixSubtitle: {
+    fontSize: 11,
+    fontFamily: 'Helvetica-Bold',
+    color: NHS_BLUE,
+    marginBottom: 6,
+    marginTop: 10,
+  },
+  descriptionText: {
+    fontSize: 8,
+    color: TEXT_SECONDARY,
+    lineHeight: 1.4,
+    marginBottom: 4,
+  },
+  customBadge: {
+    fontSize: 7,
+    fontFamily: 'Helvetica-Oblique',
+    color: TEXT_SECONDARY,
+  },
+  attendeesBox: {
+    backgroundColor: LIGHT_GREY,
+    borderRadius: 4,
+    padding: 8,
+    marginBottom: 10,
+  },
+  attendeesLabel: {
+    fontSize: 8,
+    fontFamily: 'Helvetica-Bold',
+    color: TEXT_SECONDARY,
+    marginBottom: 3,
+  },
+  attendeesText: {
+    fontSize: 8,
+    color: TEXT_PRIMARY,
+  },
+  // Executive summary score panel (Excel-style)
+  scorePanel: {
+    flex: 1,
+    backgroundColor: LIGHT_GREY,
+    borderRadius: 4,
+    padding: 10,
+    borderTopWidth: 3,
+    borderTopColor: NHS_BLUE,
+  },
+  scorePanelTitle: {
+    fontSize: 11,
+    fontFamily: 'Helvetica-Bold',
+    color: NHS_DARK_BLUE,
+    marginBottom: 4,
+  },
+  scorePanelDesc: {
+    fontSize: 7,
+    color: TEXT_SECONDARY,
+    lineHeight: 1.4,
+    marginBottom: 6,
+  },
+  scorePanelValue: {
+    fontSize: 28,
+    fontFamily: 'Helvetica-Bold',
+    color: NHS_DARK_BLUE,
+    textAlign: 'center',
+    marginBottom: 4,
+  },
+  scorePanelBenchmark: {
+    fontSize: 8,
+    color: TEXT_SECONDARY,
+    textAlign: 'center',
   },
 });
 
@@ -584,15 +689,21 @@ function ScoreBar({ label, value, maxValue }: { label: string; value: number; ma
 // ---------------------------------------------------------------------------
 
 function CoverPage({ state, reportDate }: { state: MMCAssessmentState; reportDate: string }) {
-  const projectName = state.projectDetails.projectDescription || 'Untitled Project';
-  const trustName = state.projectDetails.trustClientName || 'N/A';
-  const pscpName = state.projectDetails.pscpName || 'N/A';
+  const pd = state.projectDetails;
+  const projectName = pd.projectDescription || 'Untitled Project';
+  const trustName = pd.trustClientName || 'N/A';
+  const pscpName = pd.pscpName || 'N/A';
 
   const summary = computeExecutiveSummary(state);
   const overallRag = ragFromPercentage(summary.overallMMCPercentage);
   const cat0Rag = ragFromPercentage(summary.category0Score);
   const pmvRag = ragFromPercentage(summary.pmvScore);
   const cat7Rag = ragFromPercentage(summary.category7Score);
+
+  const stageText = [
+    businessCaseStageLabel(pd.businessCaseStage),
+    ribaStageLabel(pd.ribaStage),
+  ].filter(Boolean).join(' / ');
 
   return (
     <Page size="A4" style={styles.coverPage}>
@@ -616,6 +727,29 @@ function CoverPage({ state, reportDate }: { state: MMCAssessmentState; reportDat
           <Text style={styles.coverValue}>{pscpName}</Text>
         </View>
         <View style={styles.coverDetailRow}>
+          <Text style={styles.coverLabel}>Typology:</Text>
+          <Text style={styles.coverValue}>{typologyLabel(pd.buildingTypology)}</Text>
+        </View>
+        <View style={styles.coverDetailRow}>
+          <Text style={styles.coverLabel}>Build Type:</Text>
+          <Text style={styles.coverValue}>
+            {buildTypeLabel(pd.buildType)}
+            {pd.buildType !== 'new_build' && pd.refurbishmentPercentage > 0
+              ? ` (${pd.refurbishmentPercentage}% refurbishment)`
+              : ''}
+          </Text>
+        </View>
+        <View style={styles.coverDetailRow}>
+          <Text style={styles.coverLabel}>Stage:</Text>
+          <Text style={styles.coverValue}>{stageText}</Text>
+        </View>
+        {pd.gfaSqm > 0 && (
+          <View style={styles.coverDetailRow}>
+            <Text style={styles.coverLabel}>GFA:</Text>
+            <Text style={styles.coverValue}>{pd.gfaSqm.toLocaleString()} sqm</Text>
+          </View>
+        )}
+        <View style={styles.coverDetailRow}>
           <Text style={styles.coverLabel}>Date:</Text>
           <Text style={styles.coverValue}>{reportDate}</Text>
         </View>
@@ -624,7 +758,7 @@ function CoverPage({ state, reportDate }: { state: MMCAssessmentState; reportDat
       {/* Separator line */}
       <View style={{ width: 320, height: 1, backgroundColor: 'rgba(255,255,255,0.3)', marginVertical: 28 }} />
 
-      {/* Overall MMC score - prominent */}
+      {/* Overall MMC score */}
       <View style={{ alignItems: 'center', marginBottom: 20 }}>
         <Text style={{ fontSize: 11, color: '#8DB4E0', marginBottom: 6 }}>Overall MMC Score</Text>
         <Text style={{ fontSize: 42, fontFamily: 'Helvetica-Bold', color: WHITE }}>
@@ -645,56 +779,27 @@ function CoverPage({ state, reportDate }: { state: MMCAssessmentState; reportDat
 
       {/* Sub-scores row */}
       <View style={{ flexDirection: 'row', gap: 16, justifyContent: 'center' }}>
-        {/* Cat 0 */}
-        <View style={{ alignItems: 'center', width: 100 }}>
-          <Text style={{ fontSize: 8, color: '#8DB4E0', marginBottom: 4 }}>Category 0</Text>
-          <Text style={{ fontSize: 22, fontFamily: 'Helvetica-Bold', color: WHITE }}>
-            {summary.category0Score.toFixed(1)}%
-          </Text>
-          <View style={{
-            backgroundColor: ragColour(cat0Rag),
-            borderRadius: 3,
-            paddingVertical: 2,
-            paddingHorizontal: 8,
-            marginTop: 4,
-          }}>
-            <Text style={{ fontSize: 7, fontFamily: 'Helvetica-Bold', color: WHITE }}>{ragLabel(cat0Rag)}</Text>
+        {[
+          { label: 'Category 0', score: summary.category0Score, rag: cat0Rag },
+          { label: 'PMV Score', score: summary.pmvScore, rag: pmvRag },
+          { label: 'Category 7', score: summary.category7Score, rag: cat7Rag },
+        ].map(item => (
+          <View key={item.label} style={{ alignItems: 'center', width: 100 }}>
+            <Text style={{ fontSize: 8, color: '#8DB4E0', marginBottom: 4 }}>{item.label}</Text>
+            <Text style={{ fontSize: 22, fontFamily: 'Helvetica-Bold', color: WHITE }}>
+              {item.score.toFixed(1)}%
+            </Text>
+            <View style={{
+              backgroundColor: ragColour(item.rag),
+              borderRadius: 3,
+              paddingVertical: 2,
+              paddingHorizontal: 8,
+              marginTop: 4,
+            }}>
+              <Text style={{ fontSize: 7, fontFamily: 'Helvetica-Bold', color: WHITE }}>{ragLabel(item.rag)}</Text>
+            </View>
           </View>
-        </View>
-
-        {/* PMV */}
-        <View style={{ alignItems: 'center', width: 100 }}>
-          <Text style={{ fontSize: 8, color: '#8DB4E0', marginBottom: 4 }}>PMV Score</Text>
-          <Text style={{ fontSize: 22, fontFamily: 'Helvetica-Bold', color: WHITE }}>
-            {summary.pmvScore.toFixed(1)}%
-          </Text>
-          <View style={{
-            backgroundColor: ragColour(pmvRag),
-            borderRadius: 3,
-            paddingVertical: 2,
-            paddingHorizontal: 8,
-            marginTop: 4,
-          }}>
-            <Text style={{ fontSize: 7, fontFamily: 'Helvetica-Bold', color: WHITE }}>{ragLabel(pmvRag)}</Text>
-          </View>
-        </View>
-
-        {/* Cat 7 */}
-        <View style={{ alignItems: 'center', width: 100 }}>
-          <Text style={{ fontSize: 8, color: '#8DB4E0', marginBottom: 4 }}>Category 7</Text>
-          <Text style={{ fontSize: 22, fontFamily: 'Helvetica-Bold', color: WHITE }}>
-            {summary.category7Score.toFixed(1)}%
-          </Text>
-          <View style={{
-            backgroundColor: ragColour(cat7Rag),
-            borderRadius: 3,
-            paddingVertical: 2,
-            paddingHorizontal: 8,
-            marginTop: 4,
-          }}>
-            <Text style={{ fontSize: 7, fontFamily: 'Helvetica-Bold', color: WHITE }}>{ragLabel(cat7Rag)}</Text>
-          </View>
-        </View>
+        ))}
       </View>
     </Page>
   );
@@ -702,34 +807,100 @@ function CoverPage({ state, reportDate }: { state: MMCAssessmentState; reportDat
 
 function ExecutiveSummaryPage({ state, reportDate }: { state: MMCAssessmentState; reportDate: string }) {
   const summary = computeExecutiveSummary(state);
+  const pd = state.projectDetails;
+
+  const contextLine = `The project is mainly ${typologyLabel(pd.buildingTypology)}, ${buildTypeLabel(pd.buildType)}${
+    pd.buildType !== 'new_build' && pd.refurbishmentPercentage > 0
+      ? ` with ${pd.refurbishmentPercentage}% of the GFA being refurbishment`
+      : ''
+  }.`;
+
+  const panels = [
+    {
+      title: 'Category 0',
+      desc: 'Quantifies the level of pre-manufacturing design, standardisation and digital integration applied to the project.',
+      score: summary.category0Score,
+      benchmark: '35% to 45%',
+    },
+    {
+      title: 'PMV',
+      desc: 'Pre-Manufactured Value measures the proportion of construction value manufactured off-site relative to total project value.',
+      score: summary.pmvScore,
+      benchmark: '40% to 55%',
+    },
+    {
+      title: 'Category 7',
+      desc: 'Quantifies the adoption of site-based process innovations including digital tools, robotics and modern site practices.',
+      score: summary.category7Score,
+      benchmark: '40% to 50%',
+    },
+  ];
 
   return (
     <Page size="A4" style={styles.page}>
       <Text style={styles.sectionTitle}>Executive Summary</Text>
 
-      {/* Score cards */}
-      <View style={styles.summaryRow}>
-        <View style={styles.summaryCard}>
-          <Text style={styles.summaryCardTitle}>Overall MMC</Text>
-          <Text style={styles.summaryCardValue}>{summary.overallMMCPercentage.toFixed(1)}%</Text>
-          <RAGBadge status={ragFromPercentage(summary.overallMMCPercentage)} />
-        </View>
-        <View style={styles.summaryCard}>
-          <Text style={styles.summaryCardTitle}>Category 0</Text>
-          <Text style={styles.summaryCardValue}>{summary.category0Score.toFixed(1)}%</Text>
-          <RAGBadge status={ragFromPercentage(summary.category0Score)} />
-        </View>
-        <View style={styles.summaryCard}>
-          <Text style={styles.summaryCardTitle}>PMV Score</Text>
-          <Text style={styles.summaryCardValue}>{summary.pmvScore.toFixed(1)}%</Text>
-          <RAGBadge status={ragFromPercentage(summary.pmvScore)} />
-        </View>
-        <View style={styles.summaryCard}>
-          <Text style={styles.summaryCardTitle}>Category 7</Text>
-          <Text style={styles.summaryCardValue}>{summary.category7Score.toFixed(1)}%</Text>
-          <RAGBadge status={ragFromPercentage(summary.category7Score)} />
-        </View>
+      {/* Project context */}
+      <Text style={styles.paragraph}>{contextLine}</Text>
+      {pd.projectDescription ? (
+        <Text style={[styles.paragraph, { marginBottom: 12 }]}>{pd.projectDescription}</Text>
+      ) : null}
+
+      {/* Three score panels side by side */}
+      <View style={{ flexDirection: 'row', gap: 8, marginBottom: 14 }}>
+        {panels.map(p => (
+          <View key={p.title} style={styles.scorePanel}>
+            <Text style={styles.scorePanelTitle}>{p.title}</Text>
+            <Text style={styles.scorePanelDesc}>{p.desc}</Text>
+            <Text style={styles.scorePanelValue}>{p.score.toFixed(1)}%</Text>
+            <View style={{ alignItems: 'center', marginBottom: 4 }}>
+              <RAGBadge status={ragFromPercentage(p.score)} />
+            </View>
+            <Text style={styles.scorePanelBenchmark}>Benchmark: {p.benchmark}</Text>
+          </View>
+        ))}
       </View>
+
+      {/* Combined MMC Value */}
+      <View style={{
+        backgroundColor: NHS_DARK_BLUE,
+        borderRadius: 6,
+        padding: 14,
+        alignItems: 'center',
+        marginBottom: 14,
+      }}>
+        <Text style={{ fontSize: 10, color: '#8DB4E0', marginBottom: 4 }}>Combined MMC Value</Text>
+        <Text style={{ fontSize: 32, fontFamily: 'Helvetica-Bold', color: WHITE, marginBottom: 4 }}>
+          {summary.overallMMCPercentage.toFixed(1)}%
+        </Text>
+        <Text style={{ fontSize: 8, color: '#8DB4E0', textAlign: 'center' }}>
+          PMV ({summary.pmvScore.toFixed(1)}%) + Cat 0 ({summary.category0Score.toFixed(1)}% x 15%) + Cat 7 ({summary.category7Score.toFixed(1)}% x 15%)
+        </Text>
+      </View>
+
+      {/* MMC Breakdown donut + section bars */}
+      <Text style={styles.subSectionTitle}>MMC Breakdown</Text>
+      <View style={{ flexDirection: 'row', gap: 16, marginBottom: 8 }}>
+        <PdfDonutChart distribution={summary.pmvDistribution} totalPmv={summary.pmvScore} />
+        <PdfSectionBars distribution={summary.pmvDistribution} />
+      </View>
+
+      <PageFooter reportDate={reportDate} />
+    </Page>
+  );
+}
+
+function KeyFindingsPage({ state, reportDate }: { state: MMCAssessmentState; reportDate: string }) {
+  const summary = computeExecutiveSummary(state);
+  const items = state.benefitsScorecard.items;
+  const budget = computePointsBudget(items);
+  const constraintItems = state.constraintsScorecard.items;
+  const highSeverity = constraintItems.filter(i => i.score >= 8).sort((a, b) => b.score - a.score);
+  const topBenefits = [...items].sort((a, b) => b.points - a.points).slice(0, 5);
+
+  return (
+    <Page size="A4" style={styles.page}>
+      <Text style={styles.sectionTitle}>Key Findings</Text>
 
       {/* Benchmark table */}
       <Text style={styles.subSectionTitle}>Benchmark Comparison</Text>
@@ -760,15 +931,39 @@ function ExecutiveSummaryPage({ state, reportDate }: { state: MMCAssessmentState
         ))}
       </View>
 
-      {/* PMV Distribution - donut chart + section bars */}
-      <Text style={styles.subSectionTitle}>PMV Distribution</Text>
-      <View style={{ flexDirection: 'row', gap: 16, marginBottom: 12 }}>
-        <PdfDonutChart distribution={summary.pmvDistribution} totalPmv={summary.pmvScore} />
-        <PdfSectionBars distribution={summary.pmvDistribution} />
+      {/* Top benefits */}
+      <Text style={styles.subSectionTitle}>Top Benefits (by points, {budget.used}/100 allocated)</Text>
+      <View style={styles.table}>
+        <View style={styles.tableHeaderRow}>
+          <Text style={[styles.tableHeaderCell, { width: '50%' }]}>Benefit</Text>
+          <Text style={[styles.tableHeaderCell, { width: '25%' }]}>Category</Text>
+          <Text style={[styles.tableHeaderCell, { width: '25%', textAlign: 'center' }]}>Points</Text>
+        </View>
+        {topBenefits.map((item, i) => (
+          <View key={item.id} style={i % 2 === 0 ? styles.tableRow : styles.tableRowAlt}>
+            <Text style={[styles.tableCell, { width: '50%' }]}>{item.name}</Text>
+            <Text style={[styles.tableCell, { width: '25%' }]}>{benefitCategoryLabel(item.category)}</Text>
+            <Text style={[styles.tableCell, { width: '25%', textAlign: 'center' }]}>{item.points}</Text>
+          </View>
+        ))}
       </View>
 
-      {/* Score Composition - formula visualiser */}
-      <Text style={styles.subSectionTitle}>Score Composition</Text>
+      {/* High severity constraints */}
+      {highSeverity.length > 0 && (
+        <>
+          <Text style={styles.subSectionTitle}>High Severity Constraints (score 8+)</Text>
+          {highSeverity.map(item => (
+            <View key={item.id} style={styles.metricCard}>
+              <Text style={styles.metricLabel}>{item.name}</Text>
+              <Text style={styles.metricValue}>{item.score}/10</Text>
+              <View style={[styles.ragDot, { backgroundColor: RAG_RED }]} />
+            </View>
+          ))}
+        </>
+      )}
+
+      {/* Score composition */}
+      <Text style={[styles.subSectionTitle, { marginTop: 8 }]}>Score Composition</Text>
       <PdfFormulaVisualiser
         cat0={summary.category0Score}
         pmv={summary.pmvScore}
