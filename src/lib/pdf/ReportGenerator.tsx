@@ -1329,6 +1329,384 @@ function Category7SummaryPage({ state, reportDate }: { state: MMCAssessmentState
   );
 }
 
+// ---------------------------------------------------------------------------
+// Appendix pages (A1-A6) - detailed data capture
+// ---------------------------------------------------------------------------
+
+function AppendixProjectDetails({ state, reportDate }: { state: MMCAssessmentState; reportDate: string }) {
+  const pd = state.projectDetails;
+
+  return (
+    <Page size="A4" style={styles.page} wrap>
+      <Text style={styles.appendixTitle}>Appendix A1: Project Details</Text>
+
+      {/* Project narrative */}
+      {pd.projectNarrative ? (
+        <>
+          <Text style={styles.appendixSubtitle}>Project Narrative</Text>
+          <Text style={styles.paragraph}>{pd.projectNarrative}</Text>
+        </>
+      ) : null}
+
+      {/* Team roster */}
+      {pd.team.length > 0 && (
+        <>
+          <Text style={styles.appendixSubtitle}>Project Team</Text>
+          <View style={styles.table}>
+            <View style={styles.tableHeaderRow}>
+              <Text style={[styles.tableHeaderCell, { width: '25%' }]}>Role</Text>
+              <Text style={[styles.tableHeaderCell, { width: '25%' }]}>Name</Text>
+              <Text style={[styles.tableHeaderCell, { width: '30%' }]}>Organisation</Text>
+              <Text style={[styles.tableHeaderCell, { width: '20%' }]}>Primary Contact</Text>
+            </View>
+            {pd.team.map((member, i) => (
+              <View key={member.id} style={i % 2 === 0 ? styles.tableRow : styles.tableRowAlt}>
+                <Text style={[styles.tableCell, { width: '25%', fontFamily: 'Helvetica-Bold' }]}>{member.role}</Text>
+                <Text style={[styles.tableCell, { width: '25%' }]}>{member.name || '-'}</Text>
+                <Text style={[styles.tableCell, { width: '30%' }]}>{member.organisation || '-'}</Text>
+                <Text style={[styles.tableCell, { width: '20%' }]}>{member.primaryContact || '-'}</Text>
+              </View>
+            ))}
+          </View>
+        </>
+      )}
+
+      {/* Revision history */}
+      {pd.revisions.length > 0 && (
+        <>
+          <Text style={styles.appendixSubtitle}>Revision History</Text>
+          <View style={styles.table}>
+            <View style={styles.tableHeaderRow}>
+              <Text style={[styles.tableHeaderCell, { width: '15%' }]}>Version</Text>
+              <Text style={[styles.tableHeaderCell, { width: '25%' }]}>Date</Text>
+              <Text style={[styles.tableHeaderCell, { width: '60%' }]}>Description</Text>
+            </View>
+            {pd.revisions.map((rev, i) => (
+              <View key={`rev-${rev.version}`} style={i % 2 === 0 ? styles.tableRow : styles.tableRowAlt}>
+                <Text style={[styles.tableCell, { width: '15%' }]}>{rev.version}</Text>
+                <Text style={[styles.tableCell, { width: '25%' }]}>{rev.date}</Text>
+                <Text style={[styles.tableCell, { width: '60%' }]}>{rev.description}</Text>
+              </View>
+            ))}
+          </View>
+        </>
+      )}
+
+      {/* Workshop attendees */}
+      {pd.workshopAttendees.length > 0 && (
+        <View style={styles.attendeesBox}>
+          <Text style={styles.attendeesLabel}>Workshop Attendees</Text>
+          <Text style={styles.attendeesText}>{pd.workshopAttendees.join(', ')}</Text>
+        </View>
+      )}
+
+      <PageFooter reportDate={reportDate} />
+    </Page>
+  );
+}
+
+function AppendixBenefits({ state, reportDate }: { state: MMCAssessmentState; reportDate: string }) {
+  const items = state.benefitsScorecard.items;
+  const budget = computePointsBudget(items);
+  const categories: BenefitCategory[] = ['faster', 'better', 'sustainable_legacy', 'economic'];
+  const averages = computeAllCategoryAverages(items);
+
+  return (
+    <Page size="A4" style={styles.page} wrap>
+      <Text style={styles.appendixTitle}>Appendix A2: Benefits Scorecard</Text>
+
+      {/* Workshop attendees */}
+      {state.benefitsScorecard.workshopAttendees.length > 0 && (
+        <View style={styles.attendeesBox}>
+          <Text style={styles.attendeesLabel}>Workshop Attendees</Text>
+          <Text style={styles.attendeesText}>{state.benefitsScorecard.workshopAttendees.join(', ')}</Text>
+        </View>
+      )}
+
+      <Text style={styles.paragraph}>
+        Points budget: {budget.used} / 100 used ({budget.remaining} remaining).
+        {!budget.valid ? ' Warning: budget exceeded.' : ''}
+      </Text>
+
+      {/* All benefits grouped by category */}
+      {categories.map(cat => {
+        const catItems = items.filter(i => i.category === cat);
+        if (catItems.length === 0) return null;
+        return (
+          <View key={cat} wrap={false}>
+            <Text style={styles.appendixSubtitle}>
+              {benefitCategoryLabel(cat)} (avg importance: {(averages[cat] * 10).toFixed(1)})
+            </Text>
+            <View style={styles.table}>
+              <View style={styles.tableHeaderRow}>
+                <Text style={[styles.tableHeaderCell, { width: '35%' }]}>Benefit</Text>
+                <Text style={[styles.tableHeaderCell, { width: '12%', textAlign: 'center' }]}>Importance</Text>
+                <Text style={[styles.tableHeaderCell, { width: '10%', textAlign: 'center' }]}>Points</Text>
+                <Text style={[styles.tableHeaderCell, { width: '43%' }]}>Description</Text>
+              </View>
+              {catItems.map((item, i) => (
+                <View key={item.id} style={i % 2 === 0 ? styles.tableRow : styles.tableRowAlt}>
+                  <Text style={[styles.tableCell, { width: '35%' }]}>{item.name}</Text>
+                  <Text style={[styles.tableCell, { width: '12%', textAlign: 'center' }]}>{item.importance}</Text>
+                  <Text style={[styles.tableCell, { width: '10%', textAlign: 'center' }]}>{item.points}</Text>
+                  <Text style={[styles.descriptionText, { width: '43%' }]}>{truncateText(item.description, 200)}</Text>
+                </View>
+              ))}
+            </View>
+          </View>
+        );
+      })}
+
+      <PageFooter reportDate={reportDate} />
+    </Page>
+  );
+}
+
+function AppendixConstraints({ state, reportDate }: { state: MMCAssessmentState; reportDate: string }) {
+  const items = state.constraintsScorecard.items;
+  const average = computeConstraintAverage(items);
+  const severityCounts = computeConstraintSeverityCounts(items);
+
+  return (
+    <Page size="A4" style={styles.page} wrap>
+      <Text style={styles.appendixTitle}>Appendix A3: Constraints Scorecard</Text>
+
+      {/* Workshop attendees */}
+      {state.constraintsScorecard.workshopAttendees.length > 0 && (
+        <View style={styles.attendeesBox}>
+          <Text style={styles.attendeesLabel}>Workshop Attendees</Text>
+          <Text style={styles.attendeesText}>{state.constraintsScorecard.workshopAttendees.join(', ')}</Text>
+        </View>
+      )}
+
+      <Text style={styles.paragraph}>
+        Average constraint score: {average.toFixed(1)} / 10.
+        Low: {severityCounts.green}, Medium: {severityCounts.amber}, High: {severityCounts.red}.
+      </Text>
+
+      {/* All constraints with descriptions */}
+      <View style={styles.table}>
+        <View style={styles.tableHeaderRow}>
+          <Text style={[styles.tableHeaderCell, { width: '30%' }]}>Constraint</Text>
+          <Text style={[styles.tableHeaderCell, { width: '10%', textAlign: 'center' }]}>Score</Text>
+          <Text style={[styles.tableHeaderCell, { width: '12%', textAlign: 'center' }]}>Severity</Text>
+          <Text style={[styles.tableHeaderCell, { width: '48%' }]}>Description</Text>
+        </View>
+        {items.map((item, i) => {
+          const severity: RAGStatus = item.score <= 3 ? 'green' : item.score <= 7 ? 'amber' : 'red';
+          return (
+            <View key={item.id} style={i % 2 === 0 ? styles.tableRow : styles.tableRowAlt} wrap={false}>
+              <Text style={[styles.tableCell, { width: '30%' }]}>{item.name}</Text>
+              <Text style={[styles.tableCell, { width: '10%', textAlign: 'center' }]}>{item.score}</Text>
+              <View style={{ width: '12%', alignItems: 'center' }}>
+                <RAGBadge status={severity} />
+              </View>
+              <Text style={[styles.descriptionText, { width: '48%' }]}>{truncateText(item.description, 200)}</Text>
+            </View>
+          );
+        })}
+      </View>
+
+      <PageFooter reportDate={reportDate} />
+    </Page>
+  );
+}
+
+function AppendixCategory0({ state, reportDate }: { state: MMCAssessmentState; reportDate: string }) {
+  const cat0 = computeCategory0Total(state.category0Assessment);
+
+  return (
+    <Page size="A4" style={styles.page} wrap>
+      <Text style={styles.appendixTitle}>Appendix A4: Category 0 Assessment Detail</Text>
+
+      <Text style={styles.paragraph}>
+        Total score: {cat0.score} / {cat0.maxScore} ({cat0.percentage.toFixed(1)}%)
+      </Text>
+
+      {state.category0Assessment.subcategories.map(subcat => {
+        const result = computeSubcategoryScore(subcat);
+        const pct = result.maxScore > 0 ? (result.score / result.maxScore) * 100 : 0;
+
+        return (
+          <View key={subcat.id} wrap={false}>
+            <Text style={styles.appendixSubtitle}>
+              0.{subcat.number} {subcat.name} ({result.score}/{result.maxScore} - {pct.toFixed(0)}%)
+            </Text>
+            <View style={styles.table}>
+              <View style={styles.tableHeaderRow}>
+                <Text style={[styles.tableHeaderCell, { width: '40%' }]}>Item</Text>
+                <Text style={[styles.tableHeaderCell, { width: '12%', textAlign: 'center' }]}>Type</Text>
+                <Text style={[styles.tableHeaderCell, { width: '16%', textAlign: 'center' }]}>Value</Text>
+                <Text style={[styles.tableHeaderCell, { width: '10%', textAlign: 'center' }]}>Score</Text>
+                <Text style={[styles.tableHeaderCell, { width: '10%', textAlign: 'center' }]}>Max</Text>
+                <Text style={[styles.tableHeaderCell, { width: '12%', textAlign: 'center' }]}>Custom</Text>
+              </View>
+              {subcat.items.map((item, i) => {
+                const itemScore = computeCategory0ItemScore(item);
+                const valueDisplay = item.type === 'yes_no'
+                  ? (item.value ? 'Yes' : 'No')
+                  : (item.value ? `Yes (${item.percentage}%)` : 'No');
+                return (
+                  <View key={item.id} style={i % 2 === 0 ? styles.tableRow : styles.tableRowAlt}>
+                    <Text style={[styles.tableCell, { width: '40%' }]}>{item.name}</Text>
+                    <Text style={[styles.tableCell, { width: '12%', textAlign: 'center', fontSize: 7 }]}>
+                      {item.type === 'yes_no' ? 'Y/N' : 'Threshold'}
+                    </Text>
+                    <Text style={[styles.tableCell, { width: '16%', textAlign: 'center' }]}>{valueDisplay}</Text>
+                    <Text style={[styles.tableCell, { width: '10%', textAlign: 'center' }]}>{itemScore}</Text>
+                    <Text style={[styles.tableCell, { width: '10%', textAlign: 'center' }]}>{item.maxScore}</Text>
+                    <Text style={[styles.tableCell, { width: '12%', textAlign: 'center' }]}>
+                      {item.isCustom ? <Text style={styles.customBadge}>(Custom)</Text> : ''}
+                    </Text>
+                  </View>
+                );
+              })}
+            </View>
+          </View>
+        );
+      })}
+
+      <PageFooter reportDate={reportDate} />
+    </Page>
+  );
+}
+
+function AppendixPMV({ state, reportDate }: { state: MMCAssessmentState; reportDate: string }) {
+  const totalPmv = computeTotalPMV(state.pmvCalculation);
+  const carbonPass = allCarbonChecksPass(state.pmvCalculation);
+  const sectionPmvs = computeSectionPMV(state.pmvCalculation);
+  const sections: PMVSection[] = ['structure', 'architecture', 'building_services'];
+
+  return (
+    <Page size="A4" style={styles.page} wrap>
+      <Text style={styles.appendixTitle}>Appendix A5: PMV Calculation Detail</Text>
+
+      <Text style={styles.paragraph}>
+        Total PMV: {totalPmv.toFixed(1)}% | Carbon compliance: {carbonPass ? 'Pass' : 'Fail'}
+      </Text>
+
+      {sections.map(section => {
+        const sectionElements = state.pmvCalculation.elements.filter(el => el.section === section);
+        if (sectionElements.length === 0) return null;
+        const sectionData = sectionPmvs.find(s => s.section === section);
+        const sectionGroups: Record<string, typeof sectionElements> = {};
+        sectionElements.forEach(el => {
+          const group = el.sectionGroup || 'Other';
+          if (!sectionGroups[group]) sectionGroups[group] = [];
+          sectionGroups[group].push(el);
+        });
+
+        return (
+          <View key={section}>
+            <Text style={styles.appendixSubtitle}>
+              {sectionLabel(section)} (Avg PMV: {sectionData?.averagePmv.toFixed(1) || '0.0'}%, Contribution: {sectionData?.totalPmv.toFixed(1) || '0.0'}%)
+            </Text>
+
+            {Object.entries(sectionGroups).map(([groupName, elements]) => (
+              <View key={groupName}>
+                <Text style={{ fontSize: 9, fontFamily: 'Helvetica-Bold', color: TEXT_PRIMARY, marginTop: 6, marginBottom: 4 }}>
+                  {groupName}
+                </Text>
+                <View style={styles.table}>
+                  <View style={styles.tableHeaderRow}>
+                    <Text style={[styles.tableHeaderCell, { width: '8%' }]}>#</Text>
+                    <Text style={[styles.tableHeaderCell, { width: '28%' }]}>Element</Text>
+                    <Text style={[styles.tableHeaderCell, { width: '10%', textAlign: 'center' }]}>BCIS %</Text>
+                    <Text style={[styles.tableHeaderCell, { width: '14%', textAlign: 'center' }]}>MMC Cat.</Text>
+                    <Text style={[styles.tableHeaderCell, { width: '12%', textAlign: 'center' }]}>Elem PMV</Text>
+                    <Text style={[styles.tableHeaderCell, { width: '14%', textAlign: 'center' }]}>Project %</Text>
+                    <Text style={[styles.tableHeaderCell, { width: '14%', textAlign: 'center' }]}>Custom</Text>
+                  </View>
+                  {elements.map((el, i) => {
+                    const elPmv = computeElementPMV(el);
+                    const projContrib = computeElementProjectContribution(el) * 100;
+                    return (
+                      <View key={el.id}>
+                        {/* Element row */}
+                        <View style={i % 2 === 0 ? styles.tableRow : styles.tableRowAlt}>
+                          <Text style={[styles.tableCell, { width: '8%', fontSize: 7 }]}>{el.number}</Text>
+                          <Text style={[styles.tableCell, { width: '28%', fontFamily: 'Helvetica-Bold' }]}>{el.name}</Text>
+                          <Text style={[styles.tableCell, { width: '10%', textAlign: 'center' }]}>{el.bcisPercentage.toFixed(1)}</Text>
+                          <Text style={[styles.tableCell, { width: '14%', textAlign: 'center', fontSize: 7 }]}>
+                            {el.mmcCategories.length > 0 ? el.mmcCategories.join(', ') : '-'}
+                          </Text>
+                          <Text style={[styles.tableCell, { width: '12%', textAlign: 'center' }]}>{elPmv.toFixed(1)}%</Text>
+                          <Text style={[styles.tableCell, { width: '14%', textAlign: 'center' }]}>{projContrib.toFixed(2)}%</Text>
+                          <Text style={[styles.tableCell, { width: '14%', textAlign: 'center' }]}>
+                            {el.isCustom ? <Text style={styles.customBadge}>(Custom)</Text> : ''}
+                          </Text>
+                        </View>
+                        {/* Package sub-rows */}
+                        {el.packages.map(pkg => {
+                          const pkgPmv = computePackagePMV(pkg);
+                          return (
+                            <View key={pkg.id} style={{ flexDirection: 'row', paddingVertical: 3, paddingHorizontal: 8, paddingLeft: 24, backgroundColor: '#F8FAFB', borderBottomWidth: 0.5, borderBottomColor: BORDER_GREY }}>
+                              <Text style={[styles.descriptionText, { width: '36%' }]}>{pkg.description || 'Package'}</Text>
+                              <Text style={[styles.descriptionText, { width: '16%', textAlign: 'center' }]}>Prelims: {pkg.prelimsPercent}%</Text>
+                              <Text style={[styles.descriptionText, { width: '16%', textAlign: 'center' }]}>Labour: {pkg.labourPercent}%</Text>
+                              <Text style={[styles.descriptionText, { width: '16%', textAlign: 'center' }]}>PMV: {pkgPmv.toFixed(1)}%</Text>
+                              <Text style={[styles.descriptionText, { width: '16%' }]}></Text>
+                            </View>
+                          );
+                        })}
+                      </View>
+                    );
+                  })}
+                </View>
+              </View>
+            ))}
+          </View>
+        );
+      })}
+
+      <PageFooter reportDate={reportDate} />
+    </Page>
+  );
+}
+
+function AppendixCategory7({ state, reportDate }: { state: MMCAssessmentState; reportDate: string }) {
+  const cat7 = computeCategory7Score(state.category7Assessment);
+  const items = state.category7Assessment.items;
+
+  return (
+    <Page size="A4" style={styles.page} wrap>
+      <Text style={styles.appendixTitle}>Appendix A6: Category 7 Innovations Detail</Text>
+
+      <Text style={styles.paragraph}>
+        Innovations adopted: {cat7.score} / {cat7.maxScore} ({cat7.percentage.toFixed(1)}%)
+      </Text>
+
+      <View style={styles.table}>
+        <View style={styles.tableHeaderRow}>
+          <Text style={[styles.tableHeaderCell, { width: '35%' }]}>Innovation</Text>
+          <Text style={[styles.tableHeaderCell, { width: '12%', textAlign: 'center' }]}>Adopted</Text>
+          <Text style={[styles.tableHeaderCell, { width: '43%' }]}>Description</Text>
+          <Text style={[styles.tableHeaderCell, { width: '10%', textAlign: 'center' }]}>Custom</Text>
+        </View>
+        {items.map((item, i) => (
+          <View key={item.id} style={i % 2 === 0 ? styles.tableRow : styles.tableRowAlt} wrap={false}>
+            <Text style={[styles.tableCell, { width: '35%' }]}>{item.name}</Text>
+            <Text style={[styles.tableCell, {
+              width: '12%',
+              textAlign: 'center',
+              color: item.adopted ? RAG_GREEN : TEXT_SECONDARY,
+              fontFamily: 'Helvetica-Bold',
+            }]}>
+              {item.adopted ? 'Yes' : 'No'}
+            </Text>
+            <Text style={[styles.descriptionText, { width: '43%' }]}>{truncateText(item.description, 200)}</Text>
+            <Text style={[styles.tableCell, { width: '10%', textAlign: 'center' }]}>
+              {item.isCustom ? <Text style={styles.customBadge}>(Custom)</Text> : ''}
+            </Text>
+          </View>
+        ))}
+      </View>
+
+      <PageFooter reportDate={reportDate} />
+    </Page>
+  );
+}
+
 // Main report component
 
 interface MMCReportProps {
