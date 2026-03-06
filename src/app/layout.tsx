@@ -1,7 +1,5 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
-import { LayoutShell } from "@/components/layout/LayoutShell";
-import { InstallBanner } from "@/components/ui/InstallBanner";
 
 export const viewport: Viewport = {
   themeColor: '#003087',
@@ -24,20 +22,13 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
       <body className="antialiased">
         <div className="flex flex-col h-screen overflow-hidden">
-          <LayoutShell>
-            {children}
-          </LayoutShell>
+          {children}
         </div>
-        <InstallBanner />
       </body>
     </html>
   );
