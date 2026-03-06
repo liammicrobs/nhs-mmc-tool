@@ -5,6 +5,14 @@ import { MMCAssessmentSchema } from '@/lib/validation/assessment-schema';
 import { useDashboardStore } from '@/lib/store/dashboard-store';
 import type { MMCAssessmentState } from '@/types';
 
+const DEMO_FILES = [
+  '/demo-data/project1.mmc.json',
+  '/demo-data/project2.mmc.json',
+  '/demo-data/project3.mmc.json',
+  '/demo-data/project4.mmc.json',
+  '/demo-data/project5.mmc.json',
+];
+
 interface ImportResult {
   filename: string;
   success: boolean;
@@ -106,6 +114,39 @@ export function FileDropZone() {
     fileInputRef.current?.click();
   }, []);
 
+  const loadDemoData = useCallback(async () => {
+    setIsProcessing(true);
+    const importResults: ImportResult[] = [];
+
+    for (const url of DEMO_FILES) {
+      const filename = url.split('/').pop() || url;
+      try {
+        const res = await fetch(url);
+        if (!res.ok) {
+          importResults.push({ filename, success: false, error: `HTTP ${res.status}` });
+          continue;
+        }
+        const raw = await res.json();
+        const parsed = MMCAssessmentSchema.safeParse(raw);
+        if (!parsed.success) {
+          importResults.push({ filename, success: false, error: 'Invalid assessment file structure' });
+          continue;
+        }
+        const result = addProject(parsed.data as MMCAssessmentState);
+        if (result.added) {
+          importResults.push({ filename, success: true });
+        } else {
+          importResults.push({ filename, success: false, error: result.reason || 'Could not add project' });
+        }
+      } catch {
+        importResults.push({ filename, success: false, error: 'Failed to fetch demo file' });
+      }
+    }
+
+    setResults(importResults);
+    setIsProcessing(false);
+  }, [addProject]);
+
   return (
     <div>
       <div
@@ -178,6 +219,21 @@ export function FileDropZone() {
           className="hidden"
           onChange={handleFileChange}
         />
+      </div>
+
+      {/* Load demo data button */}
+      <div className="mt-3 text-center">
+        <button
+          type="button"
+          onClick={loadDemoData}
+          disabled={isProcessing}
+          className="inline-flex items-center gap-2 text-sm text-nhs-blue hover:text-nhs-dark-blue font-medium transition-colors disabled:opacity-50"
+        >
+          <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 9.776c.112-.017.227-.026.344-.026h15.812c.117 0 .232.009.344.026m-16.5 0a2.25 2.25 0 00-1.883 2.542l.857 6a2.25 2.25 0 002.227 1.932H19.05a2.25 2.25 0 002.227-1.932l.857-6a2.25 2.25 0 00-1.883-2.542m-16.5 0V6A2.25 2.25 0 016 3.75h3.879a1.5 1.5 0 011.06.44l2.122 2.12a1.5 1.5 0 001.06.44H18A2.25 2.25 0 0120.25 9v.776" />
+          </svg>
+          Load demo data (5 sample NHS projects)
+        </button>
       </div>
 
       {/* Import results */}
