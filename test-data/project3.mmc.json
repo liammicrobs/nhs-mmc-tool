@@ -1,0 +1,439 @@
+{
+  "projectDetails": {
+    "trustClientName": "Leeds Teaching Hospitals NHS Trust",
+    "pscpName": "Willmott Dixon",
+    "projectDescription": "New primary care hub with GP surgeries, community health services, and minor refurbishment of existing clinic building",
+    "projectNarrative": "Leeds Teaching Hospitals NHS Trust is developing a new primary care hub in the Seacroft area to co-locate GP practices with community health services. The project includes a new-build primary care facility and minor refurbishment of the existing Seacroft Clinic to create an integrated health campus. At Strategic Outline Case stage, the project team is exploring MMC options to understand potential benefits for this relatively straightforward building type.",
+    "buildingTypology": "primary_care",
+    "buildType": "mixed",
+    "businessCaseStage": "soc",
+    "ribaStage": "1",
+    "refurbishmentPercentage": 25,
+    "gfaSqm": 3200,
+    "team": [
+      {
+        "id": "faa6ed50-563d-42e5-8a15-768a419f7925",
+        "role": "Project Manager",
+        "name": "Karen Wright",
+        "organisation": "Leeds Teaching Hospitals NHS Trust",
+        "primaryContact": "karen.wright@nhs.net"
+      },
+      {
+        "id": "289050b3-0d01-4e29-8a9f-248b32193606",
+        "role": "Architect",
+        "name": "Ben Cooper",
+        "organisation": "P+HS Architects",
+        "primaryContact": "b.cooper@pandhs.co.uk"
+      },
+      {
+        "id": "4555f09b-8fd6-4200-b638-d73801a0867e",
+        "role": "Pre-construction Manager",
+        "name": "Gary Fenton",
+        "organisation": "Willmott Dixon",
+        "primaryContact": "g.fenton@willmottdixon.co.uk"
+      }
+    ],
+    "revisions": [
+      {
+        "version": 1,
+        "date": "2026-02-28",
+        "description": "Initial assessment for SOC submission"
+      }
+    ],
+    "workshopAttendees": [
+      "Karen Wright",
+      "Ben Cooper",
+      "Gary Fenton"
+    ]
+  },
+  "benefitsScorecard": {
+    "items": [
+      {
+        "id": "f22ea392-10a2-403f-a064-5dd4655d09e4",
+        "category": "faster",
+        "name": "Reduced programme duration",
+        "importance": 6,
+        "points": 30,
+        "description": "Modest programme reduction of 4-6 weeks possible through off-site manufacture of structural frame and external envelope"
+      },
+      {
+        "id": "758c71c4-61d6-495a-9411-40eda2eea3b6",
+        "category": "better",
+        "name": "Improved quality and consistency",
+        "importance": 5,
+        "points": 25,
+        "description": "Factory production of key elements expected to improve consistency of finish in clinical areas"
+      },
+      {
+        "id": "5a3608d7-ecfc-4201-b717-6727dd87414c",
+        "category": "sustainable_legacy",
+        "name": "Reduced construction waste",
+        "importance": 4,
+        "points": 20,
+        "description": "Off-site manufacture and standardised design expected to reduce waste, though limited by mixed-use nature of scheme"
+      },
+      {
+        "id": "156cffa3-c558-4d04-8a84-eaec5de8d769",
+        "category": "economic",
+        "name": "Reduced preliminaries cost",
+        "importance": 5,
+        "points": 25,
+        "description": "Shorter on-site programme reduces preliminaries costs, partially offsetting higher unit costs for off-site components"
+      }
+    ],
+    "workshopAttendees": [
+      "Karen Wright",
+      "Gary Fenton"
+    ]
+  },
+  "constraintsScorecard": {
+    "items": [
+      {
+        "id": "c97e904b-c365-4968-897f-d3c37ccbb546",
+        "name": "Existing building interface",
+        "score": 7,
+        "description": "Connection between new-build and existing clinic requires careful detailing. Refurbishment portion limits MMC applicability to approximately 75% of total GFA."
+      },
+      {
+        "id": "7d949acc-0167-4905-8b7c-eeb0ca42b5bc",
+        "name": "Budget limitations",
+        "score": 8,
+        "description": "SOC budget envelope is tight for a primary care facility. MMC solutions must demonstrate value for money within available funding."
+      },
+      {
+        "id": "562f2b2f-4cdf-44ee-811f-52c3506cf9ed",
+        "name": "Local labour market considerations",
+        "score": 5,
+        "description": "Trust and local authority have social value targets for local employment. Need to balance off-site manufacture with local labour commitments."
+      }
+    ],
+    "workshopAttendees": [
+      "Karen Wright",
+      "Ben Cooper",
+      "Gary Fenton"
+    ]
+  },
+  "category0Assessment": {
+    "subcategories": [
+      {
+        "id": "4295cfc5-2234-4f5e-aa4e-5d417880338f",
+        "number": 1,
+        "name": "Site-wide considerations",
+        "items": [
+          {
+            "id": "6f9afb15-3aa9-437b-8115-91af662b65a7",
+            "subcategoryId": "",
+            "name": "Has a pre-manufactured value target been set?",
+            "type": "yes_no",
+            "value": false,
+            "percentage": 0,
+            "thresholds": [],
+            "maxScore": 5,
+            "description": "No PMV target set at this early stage; to be considered during OBC development",
+            "isCustom": false
+          },
+          {
+            "id": "cbab0beb-beea-4367-b006-e32f499c1a73",
+            "subcategoryId": "",
+            "name": "Has a logistics strategy for MMC delivery been developed?",
+            "type": "yes_no",
+            "value": false,
+            "percentage": 0,
+            "thresholds": [],
+            "maxScore": 5,
+            "description": "Not yet developed; site access appears straightforward for a suburban location",
+            "isCustom": false
+          }
+        ]
+      },
+      {
+        "id": "e2cec6a2-b3be-4ccc-ada9-e6a4c31b334e",
+        "number": 2,
+        "name": "Design for manufacture",
+        "items": [
+          {
+            "id": "abfcf22c-6599-4ea2-b0e4-4a00b6833e50",
+            "subcategoryId": "",
+            "name": "Has a design-for-manufacture review been completed?",
+            "type": "yes_no",
+            "value": false,
+            "percentage": 0,
+            "thresholds": [],
+            "maxScore": 5,
+            "description": "Not yet; design is at RIBA Stage 1 spatial brief level only",
+            "isCustom": false
+          },
+          {
+            "id": "87dfc348-dc88-4924-a9f9-8005c068af21",
+            "subcategoryId": "",
+            "name": "Percentage of building elements with standardised dimensions",
+            "type": "percentage_threshold",
+            "value": false,
+            "percentage": 15,
+            "thresholds": [
+              {
+                "minPercent": 25,
+                "score": 2
+              },
+              {
+                "minPercent": 50,
+                "score": 4
+              },
+              {
+                "minPercent": 75,
+                "score": 6
+              }
+            ],
+            "maxScore": 6,
+            "description": "Minimal standardisation at this stage; room sizes based on HBN guidance",
+            "isCustom": false
+          }
+        ]
+      },
+      {
+        "id": "52adb994-18d8-4621-9009-91313ffb5bf6",
+        "number": 3,
+        "name": "Procurement readiness",
+        "items": [
+          {
+            "id": "a91ebbde-d758-40c9-a884-cf5563dc1f10",
+            "subcategoryId": "",
+            "name": "Have MMC suppliers been engaged in early design?",
+            "type": "yes_no",
+            "value": false,
+            "percentage": 0,
+            "thresholds": [],
+            "maxScore": 5,
+            "description": "No supplier engagement at SOC stage",
+            "isCustom": false
+          },
+          {
+            "id": "f2ae71d2-a5d5-48ce-9af3-0818caad715e",
+            "subcategoryId": "",
+            "name": "Is the procurement route compatible with MMC?",
+            "type": "yes_no",
+            "value": true,
+            "percentage": 0,
+            "thresholds": [],
+            "maxScore": 5,
+            "description": "ProCure23 framework identified as preferred route; supports early contractor involvement",
+            "isCustom": false
+          }
+        ]
+      }
+    ]
+  },
+  "pmvCalculation": {
+    "carbonChecks": {
+      "structure": true,
+      "superstructure": true,
+      "externalWalls": true,
+      "internalFinishes": false,
+      "fittings": false,
+      "services": false
+    },
+    "elements": [
+      {
+        "id": "d0ad1eb8-bf5c-4917-bbfc-b4eed5b3e5dd",
+        "number": "1.1",
+        "name": "Substructure",
+        "section": "structure",
+        "sectionGroup": "Substructure",
+        "bcisPercentage": 10.0,
+        "mmcCategories": [
+          2
+        ],
+        "description": "Strip foundations with traditional blockwork below DPC (limited MMC opportunity)",
+        "packages": [
+          {
+            "id": "983aa62c-e157-428a-8d32-71d441657633",
+            "description": "Traditional foundations",
+            "totalValue": 280000,
+            "prelimsPercent": 14,
+            "labourPercent": 65
+          }
+        ],
+        "isCustom": false
+      },
+      {
+        "id": "a3b8fb7e-318e-4f8c-9ff9-2f57bc443db8",
+        "number": "2.1",
+        "name": "Frame and upper floors",
+        "section": "structure",
+        "sectionGroup": "Superstructure",
+        "bcisPercentage": 11.0,
+        "mmcCategories": [
+          2
+        ],
+        "description": "Light steel frame with composite floor deck for two-storey new-build element",
+        "packages": [
+          {
+            "id": "a00279f9-dace-4dce-b4f1-135fa29e5b92",
+            "description": "Light steel frame system",
+            "totalValue": 420000,
+            "prelimsPercent": 12,
+            "labourPercent": 50
+          },
+          {
+            "id": "1aaec36b-c3dc-4710-9a6f-05faa2a07a05",
+            "description": "Composite floor deck",
+            "totalValue": 180000,
+            "prelimsPercent": 10,
+            "labourPercent": 45
+          }
+        ],
+        "isCustom": false
+      },
+      {
+        "id": "ece2ea2f-2002-4348-aa4b-bf221e51e3c8",
+        "number": "3.1",
+        "name": "External walls and roof",
+        "section": "architecture",
+        "sectionGroup": "External envelope",
+        "bcisPercentage": 18.0,
+        "mmcCategories": [
+          2,
+          5
+        ],
+        "description": "SFS infill panels with brick slip cladding; single ply membrane roof",
+        "packages": [
+          {
+            "id": "aebe07e7-11f2-49ef-b5da-1ebe832cf719",
+            "description": "SFS infill wall panels",
+            "totalValue": 350000,
+            "prelimsPercent": 10,
+            "labourPercent": 55
+          },
+          {
+            "id": "55f1259d-8731-467d-bb36-f3b18a2fd03a",
+            "description": "Traditional brick cladding",
+            "totalValue": 250000,
+            "prelimsPercent": 12,
+            "labourPercent": 68
+          }
+        ],
+        "isCustom": false
+      },
+      {
+        "id": "3be7c899-ef04-4eb1-9bc3-15ba6a29abd0",
+        "number": "4.1",
+        "name": "Internal elements",
+        "section": "architecture",
+        "sectionGroup": "Internal elements",
+        "bcisPercentage": 12.0,
+        "mmcCategories": [
+          5
+        ],
+        "description": "Standard metal stud partitions and suspended ceiling grid system",
+        "packages": [
+          {
+            "id": "eb786e1f-df8b-4616-b40d-f76bc7c72b0d",
+            "description": "Metal stud partitions and drylining",
+            "totalValue": 280000,
+            "prelimsPercent": 10,
+            "labourPercent": 62
+          },
+          {
+            "id": "14245603-72b5-4597-8d2e-0f18115244b6",
+            "description": "Suspended ceiling grid",
+            "totalValue": 120000,
+            "prelimsPercent": 8,
+            "labourPercent": 58
+          }
+        ],
+        "isCustom": false
+      },
+      {
+        "id": "d9374b34-f60e-415b-af42-af3b9a51c081",
+        "number": "5.1",
+        "name": "Mechanical services",
+        "section": "building_services",
+        "sectionGroup": "Mechanical",
+        "bcisPercentage": 22.0,
+        "mmcCategories": [
+          5
+        ],
+        "description": "Conventional mechanical installation with some prefabricated pipework assemblies",
+        "packages": [
+          {
+            "id": "0b847042-b5ed-427b-86ec-09bbe3d18eb0",
+            "description": "HVAC installation",
+            "totalValue": 380000,
+            "prelimsPercent": 12,
+            "labourPercent": 60
+          },
+          {
+            "id": "64855222-d5cb-461b-bb9b-7c475f2d0088",
+            "description": "Plumbing and pipework",
+            "totalValue": 220000,
+            "prelimsPercent": 10,
+            "labourPercent": 58
+          }
+        ],
+        "isCustom": false
+      },
+      {
+        "id": "c2a3fbde-42c8-4723-b552-7932f8db25ed",
+        "number": "6.1",
+        "name": "Electrical services",
+        "section": "building_services",
+        "sectionGroup": "Electrical",
+        "bcisPercentage": 16.0,
+        "mmcCategories": [
+          5
+        ],
+        "description": "Standard electrical installation with prefabricated distribution boards",
+        "packages": [
+          {
+            "id": "96c2d615-e3c6-4148-9abb-e2dddb95e01d",
+            "description": "Electrical installation",
+            "totalValue": 320000,
+            "prelimsPercent": 10,
+            "labourPercent": 55
+          },
+          {
+            "id": "b23a6aab-f22b-4299-ad47-ddca28b9b121",
+            "description": "Fire alarm and detection",
+            "totalValue": 80000,
+            "prelimsPercent": 8,
+            "labourPercent": 50
+          }
+        ],
+        "isCustom": false
+      }
+    ],
+    "supplierReturns": []
+  },
+  "category7Assessment": {
+    "items": [
+      {
+        "id": "39f35e3e-8199-4d85-a9fc-5cd3d49bfc62",
+        "name": "BIM Level 2 or above",
+        "adopted": true,
+        "description": "BIM Level 2 required under ProCure23 framework",
+        "isCustom": false
+      },
+      {
+        "id": "e7ac4fb2-9f3d-4203-a6ca-8af1106125d6",
+        "name": "Digital twin strategy",
+        "adopted": false,
+        "description": "Not applicable at this scale and stage",
+        "isCustom": false
+      },
+      {
+        "id": "cab066d5-a3e3-4ea3-ab3a-452fdd0592f2",
+        "name": "Automated design-to-manufacture data exchange",
+        "adopted": false,
+        "description": "Not yet considered; to be explored if MMC approach is adopted",
+        "isCustom": false
+      },
+      {
+        "id": "285055d2-b579-4e10-8697-a8c261501cf5",
+        "name": "Platform approach to design for manufacture",
+        "adopted": false,
+        "description": "Standard design approach with some repetition in consultation room layouts",
+        "isCustom": false
+      }
+    ]
+  }
+}

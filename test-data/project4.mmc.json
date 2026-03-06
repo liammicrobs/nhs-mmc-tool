@@ -1,0 +1,559 @@
+{
+  "projectDetails": {
+    "trustClientName": "Birmingham Women's and Children's NHS Foundation Trust",
+    "pscpName": "ISG Interior Exterior",
+    "projectDescription": "Major refurbishment of Parkview mental health inpatient unit to create trauma-informed therapeutic environments",
+    "projectNarrative": "Birmingham Women's and Children's NHS Foundation Trust is undertaking a comprehensive refurbishment of the Parkview mental health inpatient unit to modernise the clinical environment and create therapeutic spaces aligned with trauma-informed care principles. The existing 1970s building requires significant internal reconfiguration, new building services, and improved security features. ISG has been appointed through the ProCure23 framework with a focus on maximising off-site manufactured components to minimise disruption to adjacent operational wards and reduce the refurbishment programme duration.",
+    "buildingTypology": "mental_health",
+    "buildType": "refurbishment",
+    "businessCaseStage": "obc",
+    "ribaStage": "2",
+    "refurbishmentPercentage": 95,
+    "gfaSqm": 4800,
+    "team": [
+      {
+        "id": "d33c3879-cb10-4b2e-8e9a-b57097c1e2d8",
+        "role": "Project Director",
+        "name": "Louise Patel",
+        "organisation": "Birmingham W&C NHS FT",
+        "primaryContact": "louise.patel@bwc.nhs.uk"
+      },
+      {
+        "id": "dfbcc7d7-6d4f-478a-bee1-91be40c21945",
+        "role": "Lead Designer",
+        "name": "Andrew Moss",
+        "organisation": "Medical Architecture",
+        "primaryContact": "a.moss@medicalarchitecture.com"
+      },
+      {
+        "id": "feed93ee-ac32-4598-8356-1cdec5e6668e",
+        "role": "Construction Manager",
+        "name": "Steve Brennan",
+        "organisation": "ISG Interior Exterior",
+        "primaryContact": "s.brennan@isg.com"
+      },
+      {
+        "id": "a9cddc2b-d299-416a-87c6-9c7142662964",
+        "role": "Mental Health Design Specialist",
+        "name": "Dr. Claire Bamford",
+        "organisation": "Medical Architecture",
+        "primaryContact": "c.bamford@medicalarchitecture.com"
+      }
+    ],
+    "revisions": [
+      {
+        "version": 1,
+        "date": "2025-12-01",
+        "description": "Initial assessment at OBC stage"
+      },
+      {
+        "version": 2,
+        "date": "2026-02-15",
+        "description": "Updated following anti-ligature product selection workshop"
+      }
+    ],
+    "workshopAttendees": [
+      "Louise Patel",
+      "Andrew Moss",
+      "Steve Brennan",
+      "Dr. Claire Bamford"
+    ]
+  },
+  "benefitsScorecard": {
+    "items": [
+      {
+        "id": "a8e05954-cf85-4dfd-bf2e-51b201f40c44",
+        "category": "faster",
+        "name": "Minimised disruption to operational wards",
+        "importance": 10,
+        "points": 65,
+        "description": "Off-site fabrication of bathroom pods, wall panels, and service modules reduces noisy and disruptive on-site work duration by approximately 40%"
+      },
+      {
+        "id": "49f1fbb3-a009-4a4e-8491-5effc33e80af",
+        "category": "better",
+        "name": "Consistent anti-ligature detailing",
+        "importance": 10,
+        "points": 70,
+        "description": "Factory manufacture of anti-ligature fixtures ensures consistent safety-critical detailing that is difficult to achieve reliably with on-site installation"
+      },
+      {
+        "id": "b7e8355e-d0b4-4838-b839-5407a3cafa1a",
+        "category": "better",
+        "name": "Improved infection control during works",
+        "importance": 8,
+        "points": 55,
+        "description": "Pre-assembled components reduce dust and debris generation, minimising infection risk in adjacent clinical areas"
+      },
+      {
+        "id": "0f9b24a1-059d-40d6-ba04-0530936b12c1",
+        "category": "sustainable_legacy",
+        "name": "Adaptable room configurations",
+        "importance": 6,
+        "points": 40,
+        "description": "Demountable panel systems allow future reconfiguration of therapy rooms without major construction works"
+      },
+      {
+        "id": "ceae97b4-9d09-4eef-9750-3980d1b3b3a6",
+        "category": "economic",
+        "name": "Reduced decant costs",
+        "importance": 7,
+        "points": 50,
+        "description": "Shorter on-site programme reduces the period and cost of decanting patients to temporary facilities"
+      }
+    ],
+    "workshopAttendees": [
+      "Louise Patel",
+      "Andrew Moss",
+      "Steve Brennan",
+      "Dr. Claire Bamford"
+    ]
+  },
+  "constraintsScorecard": {
+    "items": [
+      {
+        "id": "c9162a9d-bc65-45c1-b0a1-e616bea5518a",
+        "name": "Existing building structural constraints",
+        "score": 8,
+        "description": "1970s concrete frame limits floor-to-ceiling height available for service distribution. Existing structure requires survey to confirm load capacity for heavier MMC components."
+      },
+      {
+        "id": "61e0ebee-ae66-442d-9c39-f47e25749346",
+        "name": "Anti-ligature certification requirements",
+        "score": 6,
+        "description": "All fixtures and fittings in patient areas must meet anti-ligature standards. Limited range of pre-certified MMC bathroom pods available for mental health settings."
+      },
+      {
+        "id": "6d8d6a34-c7f7-4dff-bd16-22fcca54ef42",
+        "name": "Access for component delivery",
+        "score": 7,
+        "description": "Internal refurbishment requires all components to pass through existing corridors and doorways, limiting maximum module size to 2.4m x 1.2m x 2.7m."
+      }
+    ],
+    "workshopAttendees": [
+      "Steve Brennan",
+      "Andrew Moss"
+    ]
+  },
+  "category0Assessment": {
+    "subcategories": [
+      {
+        "id": "870b6a84-ff28-415a-9908-a6ec9b9110f4",
+        "number": 1,
+        "name": "Site-wide considerations",
+        "items": [
+          {
+            "id": "ba299a63-a269-4b5d-a25e-7cd000d015f2",
+            "subcategoryId": "",
+            "name": "Has a pre-manufactured value target been set?",
+            "type": "yes_no",
+            "value": true,
+            "percentage": 0,
+            "thresholds": [],
+            "maxScore": 5,
+            "description": "PMV target of 45% set, reflecting refurbishment constraints",
+            "isCustom": false
+          },
+          {
+            "id": "11486cb6-add4-426f-aabe-bfec2f0f1bf6",
+            "subcategoryId": "",
+            "name": "Has a logistics strategy for MMC delivery been developed?",
+            "type": "yes_no",
+            "value": true,
+            "percentage": 0,
+            "thresholds": [],
+            "maxScore": 5,
+            "description": "Detailed logistics plan developed for phased delivery through operational hospital",
+            "isCustom": false
+          },
+          {
+            "id": "7920b3dc-0f65-4d62-89f1-c70830d79568",
+            "subcategoryId": "",
+            "name": "Is there a designated MMC coordination role on the project?",
+            "type": "yes_no",
+            "value": true,
+            "percentage": 0,
+            "thresholds": [],
+            "maxScore": 5,
+            "description": "ISG pre-construction manager acting as MMC coordinator",
+            "isCustom": false
+          }
+        ]
+      },
+      {
+        "id": "93ccb018-96c8-4e20-b337-322ea6179356",
+        "number": 2,
+        "name": "Design for manufacture",
+        "items": [
+          {
+            "id": "046edfb1-d4b1-44c0-88fb-678c682f8f4e",
+            "subcategoryId": "",
+            "name": "Has a design-for-manufacture review been completed?",
+            "type": "yes_no",
+            "value": true,
+            "percentage": 0,
+            "thresholds": [],
+            "maxScore": 5,
+            "description": "DfMA review completed focusing on component sizes compatible with existing building access",
+            "isCustom": false
+          },
+          {
+            "id": "8acee46c-2bca-44e2-a675-66a121c052fe",
+            "subcategoryId": "",
+            "name": "Percentage of building elements with standardised dimensions",
+            "type": "percentage_threshold",
+            "value": false,
+            "percentage": 35,
+            "thresholds": [
+              {
+                "minPercent": 25,
+                "score": 2
+              },
+              {
+                "minPercent": 50,
+                "score": 4
+              },
+              {
+                "minPercent": 75,
+                "score": 6
+              }
+            ],
+            "maxScore": 6,
+            "description": "35% standardisation achieved; limited by existing building grid and varying room sizes",
+            "isCustom": false
+          }
+        ]
+      },
+      {
+        "id": "ca89c75c-d414-4e86-a47f-09668f09c204",
+        "number": 3,
+        "name": "Procurement readiness",
+        "items": [
+          {
+            "id": "2cd4c032-a0f5-4816-b176-5b6dbdd1f7bc",
+            "subcategoryId": "",
+            "name": "Have MMC suppliers been engaged in early design?",
+            "type": "yes_no",
+            "value": true,
+            "percentage": 0,
+            "thresholds": [],
+            "maxScore": 5,
+            "description": "Anti-ligature bathroom pod supplier engaged at RIBA Stage 1 to inform design",
+            "isCustom": false
+          },
+          {
+            "id": "fd1b1bef-3647-4df5-9319-820b4010f10f",
+            "subcategoryId": "",
+            "name": "Is the procurement route compatible with MMC?",
+            "type": "yes_no",
+            "value": true,
+            "percentage": 0,
+            "thresholds": [],
+            "maxScore": 5,
+            "description": "ProCure23 with early contractor involvement supports MMC adoption",
+            "isCustom": false
+          },
+          {
+            "id": "d3141ea2-e08e-4d13-a8b6-032bf8834e0e",
+            "subcategoryId": "",
+            "name": "Percentage of packages with MMC specification included",
+            "type": "percentage_threshold",
+            "value": false,
+            "percentage": 40,
+            "thresholds": [
+              {
+                "minPercent": 20,
+                "score": 2
+              },
+              {
+                "minPercent": 50,
+                "score": 5
+              },
+              {
+                "minPercent": 80,
+                "score": 8
+              }
+            ],
+            "maxScore": 8,
+            "description": "40% of packages include MMC specification; focused on bathrooms, wall panels, and ceiling systems",
+            "isCustom": false
+          }
+        ]
+      },
+      {
+        "id": "00a30b97-7c50-4143-9cde-141d109e675c",
+        "number": 4,
+        "name": "Client and stakeholder readiness",
+        "items": [
+          {
+            "id": "85a1b713-e793-40d1-afe8-f9265e3560d8",
+            "subcategoryId": "",
+            "name": "Has the client endorsed an MMC-first approach?",
+            "type": "yes_no",
+            "value": true,
+            "percentage": 0,
+            "thresholds": [],
+            "maxScore": 5,
+            "description": "Trust Board supports MMC approach, particularly for patient safety benefits in anti-ligature detailing",
+            "isCustom": false
+          },
+          {
+            "id": "6aecfb38-fa7d-4a3d-9e85-5820ddf40f79",
+            "subcategoryId": "",
+            "name": "Are clinical user groups engaged with MMC implications?",
+            "type": "yes_no",
+            "value": true,
+            "percentage": 0,
+            "thresholds": [],
+            "maxScore": 5,
+            "description": "Mental health nursing team and service users involved in mock-up reviews of bathroom pod prototypes",
+            "isCustom": false
+          }
+        ]
+      }
+    ]
+  },
+  "pmvCalculation": {
+    "carbonChecks": {
+      "structure": true,
+      "superstructure": true,
+      "externalWalls": true,
+      "internalFinishes": true,
+      "fittings": true,
+      "services": false
+    },
+    "elements": [
+      {
+        "id": "5bfca534-6e48-4f0c-b398-8670e5d09a1a",
+        "number": "1.1",
+        "name": "Structural alterations",
+        "section": "structure",
+        "sectionGroup": "Substructure",
+        "bcisPercentage": 5.0,
+        "mmcCategories": [
+          2
+        ],
+        "description": "Localised structural modifications to accommodate new room layouts and service risers",
+        "packages": [
+          {
+            "id": "63d10474-7742-4321-8293-2f3079478ecd",
+            "description": "Structural alterations and steelwork",
+            "totalValue": 320000,
+            "prelimsPercent": 14,
+            "labourPercent": 60
+          }
+        ],
+        "isCustom": false
+      },
+      {
+        "id": "c52a68ef-6dc2-4e87-bbde-b96c71bfdb92",
+        "number": "2.1",
+        "name": "External wall upgrades",
+        "section": "architecture",
+        "sectionGroup": "External envelope",
+        "bcisPercentage": 12.0,
+        "mmcCategories": [
+          5
+        ],
+        "description": "New window systems with anti-ligature restrictors and external insulation overlay",
+        "packages": [
+          {
+            "id": "833ae32f-472b-4a44-a3d0-c1f4ada9a2c8",
+            "description": "Anti-ligature window systems",
+            "totalValue": 480000,
+            "prelimsPercent": 10,
+            "labourPercent": 48
+          },
+          {
+            "id": "97f28297-2b6e-4ba5-8233-c0e3637426ac",
+            "description": "External wall insulation system",
+            "totalValue": 350000,
+            "prelimsPercent": 12,
+            "labourPercent": 55
+          }
+        ],
+        "isCustom": false
+      },
+      {
+        "id": "abd6c046-7f70-4143-aefa-628bc539108f",
+        "number": "3.1",
+        "name": "Internal walls and partitions",
+        "section": "architecture",
+        "sectionGroup": "Internal elements",
+        "bcisPercentage": 15.0,
+        "mmcCategories": [
+          2,
+          5
+        ],
+        "description": "Anti-ligature wall panels, demountable partition systems, and impact-resistant linings",
+        "packages": [
+          {
+            "id": "0a6dd7f9-3ebd-4801-8692-7616a5fe31ea",
+            "description": "Anti-ligature wall panel system",
+            "totalValue": 620000,
+            "prelimsPercent": 8,
+            "labourPercent": 42
+          },
+          {
+            "id": "a5e71661-ae27-426e-aae6-020ea9861ad3",
+            "description": "Demountable partition system",
+            "totalValue": 380000,
+            "prelimsPercent": 9,
+            "labourPercent": 45
+          },
+          {
+            "id": "8a2eacb0-7932-4563-a657-a076051b784f",
+            "description": "Impact-resistant corridor linings",
+            "totalValue": 210000,
+            "prelimsPercent": 10,
+            "labourPercent": 50
+          }
+        ],
+        "isCustom": false
+      },
+      {
+        "id": "818bb7a2-bb36-4043-83da-8a2a892caf62",
+        "number": "4.1",
+        "name": "Bathroom pods",
+        "section": "architecture",
+        "sectionGroup": "Fittings and furnishings",
+        "bcisPercentage": 8.0,
+        "mmcCategories": [
+          1
+        ],
+        "description": "Anti-ligature bathroom pods with concealed services, certified to DVA anti-ligature standards",
+        "packages": [
+          {
+            "id": "e7892b0b-24fe-412e-b969-65960b675816",
+            "description": "Anti-ligature bathroom pods (48 units)",
+            "totalValue": 1440000,
+            "prelimsPercent": 6,
+            "labourPercent": 32
+          }
+        ],
+        "isCustom": false
+      },
+      {
+        "id": "76d37f13-0607-45aa-a058-550005871a4a",
+        "number": "5.1",
+        "name": "Mechanical services",
+        "section": "building_services",
+        "sectionGroup": "Mechanical",
+        "bcisPercentage": 25.0,
+        "mmcCategories": [
+          3,
+          5
+        ],
+        "description": "New HVAC installation with prefabricated ductwork sections and pre-assembled valve stations",
+        "packages": [
+          {
+            "id": "61593824-6514-4aaf-8390-46b660d8b5b9",
+            "description": "Prefabricated ductwork sections",
+            "totalValue": 450000,
+            "prelimsPercent": 10,
+            "labourPercent": 45
+          },
+          {
+            "id": "859a7b82-3e8e-454a-ab21-6b54f0958e8e",
+            "description": "Pre-assembled valve stations",
+            "totalValue": 180000,
+            "prelimsPercent": 8,
+            "labourPercent": 40
+          },
+          {
+            "id": "80d3601a-c713-4a7b-9465-95452e9aeff8",
+            "description": "Conventional HVAC installation",
+            "totalValue": 680000,
+            "prelimsPercent": 12,
+            "labourPercent": 58
+          }
+        ],
+        "isCustom": false
+      },
+      {
+        "id": "a7cea1d8-a63b-4d70-8ccf-fae2b5d3314e",
+        "number": "6.1",
+        "name": "Electrical and security services",
+        "section": "building_services",
+        "sectionGroup": "Electrical",
+        "bcisPercentage": 20.0,
+        "mmcCategories": [
+          3,
+          5
+        ],
+        "description": "New electrical distribution, anti-ligature lighting, nurse call system, and CCTV",
+        "packages": [
+          {
+            "id": "2f96afb9-f94a-44ad-943a-6f3cc81a20be",
+            "description": "Anti-ligature lighting modules",
+            "totalValue": 280000,
+            "prelimsPercent": 8,
+            "labourPercent": 44
+          },
+          {
+            "id": "4a49f99b-05e5-42e6-b74f-bc8294b668c5",
+            "description": "Pre-wired nurse call system",
+            "totalValue": 160000,
+            "prelimsPercent": 7,
+            "labourPercent": 42
+          },
+          {
+            "id": "c13bb535-64eb-43fc-9dfd-5b7c4d391923",
+            "description": "Electrical distribution and containment",
+            "totalValue": 520000,
+            "prelimsPercent": 10,
+            "labourPercent": 55
+          }
+        ],
+        "isCustom": false
+      }
+    ],
+    "supplierReturns": []
+  },
+  "category7Assessment": {
+    "items": [
+      {
+        "id": "4901e36b-ea59-4d43-b678-c9ef8d9c9767",
+        "name": "BIM Level 2 or above",
+        "adopted": true,
+        "description": "BIM Level 2 with point cloud survey of existing building informing design model",
+        "isCustom": false
+      },
+      {
+        "id": "5093ae9c-741e-47de-a83f-092fc253b4ee",
+        "name": "Digital twin strategy",
+        "adopted": false,
+        "description": "Not in scope for this refurbishment project",
+        "isCustom": false
+      },
+      {
+        "id": "cc2ce6b9-e965-4fcb-9ac5-d6e97da4f53c",
+        "name": "Automated design-to-manufacture data exchange",
+        "adopted": true,
+        "description": "Direct data exchange with bathroom pod manufacturer from Revit model",
+        "isCustom": false
+      },
+      {
+        "id": "45cfc203-354d-4296-8a33-52725e88ef9b",
+        "name": "Platform approach to design for manufacture",
+        "adopted": false,
+        "description": "Limited applicability due to existing building constraints; standardised within ward typology only",
+        "isCustom": false
+      },
+      {
+        "id": "98f2af39-3489-4b79-a0ae-9cf050d90cc1",
+        "name": "Use of golden thread for product tracking",
+        "adopted": true,
+        "description": "Product tracking implemented for all anti-ligature components for Building Safety Act compliance",
+        "isCustom": false
+      },
+      {
+        "id": "8dda1a4f-7a6c-4345-81df-b57f565a54e4",
+        "name": "3D laser scanning for as-built verification",
+        "adopted": true,
+        "description": "Point cloud scanning used for existing building survey and installation verification",
+        "isCustom": false
+      }
+    ]
+  }
+}

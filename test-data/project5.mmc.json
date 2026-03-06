@@ -1,0 +1,726 @@
+{
+  "projectDetails": {
+    "trustClientName": "Great Ormond Street Hospital for Children NHS Foundation Trust",
+    "pscpName": "Lendlease",
+    "projectDescription": "New paediatric centre of excellence with advanced surgical theatres, imaging suite, and family accommodation",
+    "projectNarrative": "Great Ormond Street Hospital is delivering a landmark paediatric centre of excellence that will set new standards for children's healthcare facilities globally. The building combines highly complex clinical spaces including advanced surgical theatres and an MRI suite with child-friendly environments and on-site family accommodation. Lendlease has been appointed to deliver the project using their industry-leading platform-based approach to design for manufacture and assembly, targeting the highest levels of pre-manufactured value achieved on any NHS project. The FBC demonstrates exceptional value for money with a 22-week programme saving and 35% defect reduction compared to traditional construction benchmarks.",
+    "buildingTypology": "acute",
+    "buildType": "new_build",
+    "businessCaseStage": "fbc",
+    "ribaStage": "4",
+    "refurbishmentPercentage": 0,
+    "gfaSqm": 18500,
+    "team": [
+      {
+        "id": "a9a7d371-3400-4b02-8529-527651aaaf32",
+        "role": "Project Director",
+        "name": "Matthew Harrison",
+        "organisation": "Great Ormond Street Hospital NHS FT",
+        "primaryContact": "matthew.harrison@gosh.nhs.uk"
+      },
+      {
+        "id": "5d5da30b-5310-4d3d-a3fc-ae2db6b51084",
+        "role": "Lead Architect",
+        "name": "Anna Bergstrom",
+        "organisation": "Stantec",
+        "primaryContact": "a.bergstrom@stantec.com"
+      },
+      {
+        "id": "8f708cd9-3d9b-45e9-a370-ee88502fbe66",
+        "role": "Construction Director",
+        "name": "Rachel Quinn",
+        "organisation": "Lendlease",
+        "primaryContact": "r.quinn@lendlease.com"
+      },
+      {
+        "id": "aba45c74-9b06-4d55-9aaa-ddd2c929d022",
+        "role": "Cost Director",
+        "name": "Simon Hargreaves",
+        "organisation": "Turner & Townsend",
+        "primaryContact": "s.hargreaves@turnertownsend.com"
+      },
+      {
+        "id": "173c4c7a-b114-4c19-96d4-4256c08362e1",
+        "role": "MMC Strategy Lead",
+        "name": "Dr. James Bowden",
+        "organisation": "Lendlease",
+        "primaryContact": "j.bowden@lendlease.com"
+      },
+      {
+        "id": "0e09c182-4217-40dd-b057-efe213a64d37",
+        "role": "Clinical Programme Director",
+        "name": "Prof. Sarah Jennings",
+        "organisation": "Great Ormond Street Hospital NHS FT",
+        "primaryContact": "sarah.jennings@gosh.nhs.uk"
+      }
+    ],
+    "revisions": [
+      {
+        "version": 1,
+        "date": "2025-03-20",
+        "description": "Initial assessment at SOC stage"
+      },
+      {
+        "version": 2,
+        "date": "2025-07-15",
+        "description": "Updated for OBC with detailed PMV analysis"
+      },
+      {
+        "version": 3,
+        "date": "2025-11-30",
+        "description": "Revised following RIBA Stage 3 design freeze"
+      },
+      {
+        "version": 4,
+        "date": "2026-02-28",
+        "description": "Final update for FBC with confirmed supplier commitments and manufacturing programmes"
+      }
+    ],
+    "workshopAttendees": [
+      "Matthew Harrison",
+      "Anna Bergstrom",
+      "Rachel Quinn",
+      "Simon Hargreaves",
+      "Dr. James Bowden",
+      "Prof. Sarah Jennings"
+    ]
+  },
+  "benefitsScorecard": {
+    "items": [
+      {
+        "id": "1ba292cd-accd-4b50-98b3-632f524466bd",
+        "category": "faster",
+        "name": "Significant programme reduction",
+        "importance": 10,
+        "points": 90,
+        "description": "Platform-based approach with extensive parallel manufacture delivers 22-week programme reduction, with 65% of building components manufactured off-site concurrently with foundations"
+      },
+      {
+        "id": "bc94f40b-b810-4040-8ab6-2c310e250d81",
+        "category": "faster",
+        "name": "Rapid watertight envelope",
+        "importance": 8,
+        "points": 80,
+        "description": "Unitised facade system achieves watertight envelope 14 weeks ahead of traditional programme, enabling early commencement of internal fit-out"
+      },
+      {
+        "id": "57a0e97b-0560-44ef-88a8-f462f4bce379",
+        "category": "better",
+        "name": "Exceptional quality and precision",
+        "importance": 10,
+        "points": 92,
+        "description": "Factory-controlled manufacture achieves tolerances of +/- 2mm across all structural and architectural components, with 35% fewer defects at handover"
+      },
+      {
+        "id": "344743c5-c20d-4fd0-a15d-6ad7f20536bb",
+        "category": "better",
+        "name": "Enhanced health and safety performance",
+        "importance": 9,
+        "points": 85,
+        "description": "70% reduction in working at height, 60% reduction in manual handling, and elimination of hot works from the building envelope"
+      },
+      {
+        "id": "fbfdf3b2-50bc-4e57-8396-0ff685703599",
+        "category": "sustainable_legacy",
+        "name": "Net zero carbon in construction",
+        "importance": 9,
+        "points": 88,
+        "description": "Optimised material use, reduced transport, and renewable energy in manufacturing achieves 45% reduction in embodied carbon with residual emissions offset"
+      },
+      {
+        "id": "673817de-d7e4-456b-97dd-dc1047346c56",
+        "category": "economic",
+        "name": "Superior whole life value",
+        "importance": 8,
+        "points": 78,
+        "description": "Cost certainty through fixed-price manufacturing, reduced defect rectification, and improved thermal performance deliver 15% improvement in whole life cost assessment"
+      }
+    ],
+    "workshopAttendees": [
+      "Matthew Harrison",
+      "Rachel Quinn",
+      "Simon Hargreaves",
+      "Dr. James Bowden"
+    ]
+  },
+  "constraintsScorecard": {
+    "items": [
+      {
+        "id": "35fc832a-f193-497a-8756-ee8dc879e40a",
+        "name": "Central London site logistics",
+        "score": 7,
+        "description": "Highly constrained central London site adjacent to operational hospital. Comprehensive logistics management plan with off-site consolidation centre in Stratford and overnight deliveries for large components."
+      },
+      {
+        "id": "b3721a21-0fa3-4e1f-aa63-ada51c507b9d",
+        "name": "Complex clinical adjacencies",
+        "score": 3,
+        "description": "Advanced surgical theatres and MRI suite require specialist installation by equipment manufacturers. MMC approach accommodates these through structural shell-and-core strategy with dedicated specialist fit-out zones."
+      }
+    ],
+    "workshopAttendees": [
+      "Rachel Quinn",
+      "Dr. James Bowden",
+      "Simon Hargreaves"
+    ]
+  },
+  "category0Assessment": {
+    "subcategories": [
+      {
+        "id": "5bac3535-afe5-4996-b34e-ecf035cdc209",
+        "number": 1,
+        "name": "Site-wide considerations",
+        "items": [
+          {
+            "id": "66e058d9-e84a-438b-9626-1fbc97821d40",
+            "subcategoryId": "",
+            "name": "Has a pre-manufactured value target been set?",
+            "type": "yes_no",
+            "value": true,
+            "percentage": 0,
+            "thresholds": [],
+            "maxScore": 5,
+            "description": "PMV target of 75% established in project brief and endorsed by NHSE as exemplar project",
+            "isCustom": false
+          },
+          {
+            "id": "60853b9c-4b2a-4133-9991-21b8c30f1aa1",
+            "subcategoryId": "",
+            "name": "Has a logistics strategy for MMC delivery been developed?",
+            "type": "yes_no",
+            "value": true,
+            "percentage": 0,
+            "thresholds": [],
+            "maxScore": 5,
+            "description": "Comprehensive logistics plan with off-site consolidation centre, JIT delivery scheduling, and ANPR tracking",
+            "isCustom": false
+          },
+          {
+            "id": "975aa86e-8a5f-471f-86c4-d2620d9a3c0e",
+            "subcategoryId": "",
+            "name": "Is there a designated MMC coordination role on the project?",
+            "type": "yes_no",
+            "value": true,
+            "percentage": 0,
+            "thresholds": [],
+            "maxScore": 5,
+            "description": "Dedicated MMC Strategy Lead (Dr. James Bowden) with team of 4 MMC coordinators",
+            "isCustom": false
+          }
+        ]
+      },
+      {
+        "id": "dfd5b431-3e52-48ab-be0a-2db91e546f17",
+        "number": 2,
+        "name": "Design for manufacture",
+        "items": [
+          {
+            "id": "8f532e9b-9444-4b90-887a-cb9faacbc7e7",
+            "subcategoryId": "",
+            "name": "Has a design-for-manufacture review been completed?",
+            "type": "yes_no",
+            "value": true,
+            "percentage": 0,
+            "thresholds": [],
+            "maxScore": 5,
+            "description": "Comprehensive DfMA reviews at each RIBA stage with manufacturing input from Stage 0",
+            "isCustom": false
+          },
+          {
+            "id": "1e6d8eaa-3363-4144-b775-8cf921233ac4",
+            "subcategoryId": "",
+            "name": "Percentage of building elements with standardised dimensions",
+            "type": "percentage_threshold",
+            "value": false,
+            "percentage": 85,
+            "thresholds": [
+              {
+                "minPercent": 25,
+                "score": 2
+              },
+              {
+                "minPercent": 50,
+                "score": 4
+              },
+              {
+                "minPercent": 75,
+                "score": 6
+              }
+            ],
+            "maxScore": 6,
+            "description": "85% of elements on platform-based standardised dimensions; only specialist clinical spaces deviate",
+            "isCustom": false
+          },
+          {
+            "id": "7df086d5-42de-4607-a5d0-2826db1a2852",
+            "subcategoryId": "",
+            "name": "Has a tolerance management strategy been implemented?",
+            "type": "yes_no",
+            "value": true,
+            "percentage": 0,
+            "thresholds": [],
+            "maxScore": 5,
+            "description": "Rigorous tolerance management with digital verification at factory and on-site using robotic total stations",
+            "isCustom": false
+          }
+        ]
+      },
+      {
+        "id": "7355172a-7183-4679-80b4-6dc3e48781f9",
+        "number": 3,
+        "name": "Procurement readiness",
+        "items": [
+          {
+            "id": "e7fbe3b8-f19f-4744-89e4-2366eeff78d6",
+            "subcategoryId": "",
+            "name": "Have MMC suppliers been engaged in early design?",
+            "type": "yes_no",
+            "value": true,
+            "percentage": 0,
+            "thresholds": [],
+            "maxScore": 5,
+            "description": "All key MMC suppliers engaged from RIBA Stage 0 through Lendlease's supply chain partnerships",
+            "isCustom": false
+          },
+          {
+            "id": "4251e2d4-ee87-481d-bb6f-af75bfd3e356",
+            "subcategoryId": "",
+            "name": "Is the procurement route compatible with MMC?",
+            "type": "yes_no",
+            "value": true,
+            "percentage": 0,
+            "thresholds": [],
+            "maxScore": 5,
+            "description": "Bespoke partnering arrangement with integrated project delivery model optimised for MMC",
+            "isCustom": false
+          },
+          {
+            "id": "d4afd1d1-3df9-472b-8335-b94e91df3eac",
+            "subcategoryId": "",
+            "name": "Percentage of packages with MMC specification included",
+            "type": "percentage_threshold",
+            "value": false,
+            "percentage": 85,
+            "thresholds": [
+              {
+                "minPercent": 20,
+                "score": 2
+              },
+              {
+                "minPercent": 50,
+                "score": 5
+              },
+              {
+                "minPercent": 80,
+                "score": 8
+              }
+            ],
+            "maxScore": 8,
+            "description": "85% of work packages have confirmed MMC specification with signed supplier commitments",
+            "isCustom": false
+          }
+        ]
+      },
+      {
+        "id": "bd7447da-e3d1-4962-bca0-62a530ae8f99",
+        "number": 4,
+        "name": "Client and stakeholder readiness",
+        "items": [
+          {
+            "id": "0f32ff93-37c4-411f-a84a-17775fc21bbe",
+            "subcategoryId": "",
+            "name": "Has the client endorsed an MMC-first approach?",
+            "type": "yes_no",
+            "value": true,
+            "percentage": 0,
+            "thresholds": [],
+            "maxScore": 5,
+            "description": "Trust Board, NHSE, and DHSC jointly endorsed as MMC exemplar project",
+            "isCustom": false
+          },
+          {
+            "id": "db4a7279-6ceb-4d42-a265-7f6cb29db236",
+            "subcategoryId": "",
+            "name": "Are clinical user groups engaged with MMC implications?",
+            "type": "yes_no",
+            "value": true,
+            "percentage": 0,
+            "thresholds": [],
+            "maxScore": 5,
+            "description": "Extensive clinical engagement programme including full-scale mock-up ward visited by 200+ staff and patient families",
+            "isCustom": false
+          }
+        ]
+      },
+      {
+        "id": "2ae70dbf-c18a-458d-8f03-f0d0ca6c672b",
+        "number": 5,
+        "name": "Manufacturing and quality assurance",
+        "items": [
+          {
+            "id": "5ab1af33-f8f9-4b05-9d93-fa22ad90a753",
+            "subcategoryId": "",
+            "name": "Do proposed manufacturers hold relevant quality certifications?",
+            "type": "yes_no",
+            "value": true,
+            "percentage": 0,
+            "thresholds": [],
+            "maxScore": 5,
+            "description": "All manufacturers hold ISO 9001, ISO 14001, and relevant BOPAS/BBA certifications",
+            "isCustom": false
+          },
+          {
+            "id": "64caea56-40fa-4f09-8389-aa0fd146c800",
+            "subcategoryId": "",
+            "name": "Has factory capacity been confirmed for project timescales?",
+            "type": "yes_no",
+            "value": true,
+            "percentage": 0,
+            "thresholds": [],
+            "maxScore": 5,
+            "description": "Manufacturing slots confirmed with all suppliers; dedicated production lines at Lendlease's Wolverhampton facility",
+            "isCustom": false
+          },
+          {
+            "id": "78351432-52c1-4507-a317-d030a2c5660c",
+            "subcategoryId": "",
+            "name": "Is there a factory inspection and quality audit programme?",
+            "type": "yes_no",
+            "value": true,
+            "percentage": 0,
+            "thresholds": [],
+            "maxScore": 5,
+            "description": "Monthly factory audits with real-time quality dashboards and automated defect tracking",
+            "isCustom": false
+          }
+        ]
+      }
+    ]
+  },
+  "pmvCalculation": {
+    "carbonChecks": {
+      "structure": true,
+      "superstructure": true,
+      "externalWalls": true,
+      "internalFinishes": true,
+      "fittings": true,
+      "services": true
+    },
+    "elements": [
+      {
+        "id": "d2b3c465-7704-448e-af93-ca90504c295d",
+        "number": "1.1",
+        "name": "Substructure",
+        "section": "structure",
+        "sectionGroup": "Substructure",
+        "bcisPercentage": 6.0,
+        "mmcCategories": [
+          1,
+          2
+        ],
+        "description": "Secant pile wall with precast capping beam, precast pile caps and ground beams",
+        "packages": [
+          {
+            "id": "ee3c520a-f071-494d-8417-e72c8ae48942",
+            "description": "Precast capping beam and pile caps",
+            "totalValue": 2800000,
+            "prelimsPercent": 8,
+            "labourPercent": 35
+          },
+          {
+            "id": "81b56b47-295f-432b-9099-3424ebc16a1c",
+            "description": "Precast ground beams",
+            "totalValue": 1200000,
+            "prelimsPercent": 7,
+            "labourPercent": 32
+          }
+        ],
+        "isCustom": false
+      },
+      {
+        "id": "09a60cb2-3ace-4ffe-89fa-74c7c393ea44",
+        "number": "2.1",
+        "name": "Frame and upper floors",
+        "section": "structure",
+        "sectionGroup": "Superstructure",
+        "bcisPercentage": 13.0,
+        "mmcCategories": [
+          1,
+          2
+        ],
+        "description": "Steel frame with composite metal deck floors and precast concrete cores",
+        "packages": [
+          {
+            "id": "80e54b47-f864-446a-b749-a36de3cd47cf",
+            "description": "Structural steel frame (platform-based)",
+            "totalValue": 8200000,
+            "prelimsPercent": 8,
+            "labourPercent": 33
+          },
+          {
+            "id": "c19e5d22-4bf5-4fb2-9b0c-8f9b750cc717",
+            "description": "Composite metal deck floors",
+            "totalValue": 3500000,
+            "prelimsPercent": 7,
+            "labourPercent": 30
+          },
+          {
+            "id": "ae4cb8ec-fbd3-4d7b-9225-b7b52a4c3dbb",
+            "description": "Precast concrete stair and lift cores",
+            "totalValue": 2100000,
+            "prelimsPercent": 6,
+            "labourPercent": 28
+          }
+        ],
+        "isCustom": false
+      },
+      {
+        "id": "2c486ef0-b63e-4ab5-9516-c64fd1fd3386",
+        "number": "3.1",
+        "name": "External envelope",
+        "section": "architecture",
+        "sectionGroup": "External envelope",
+        "bcisPercentage": 15.0,
+        "mmcCategories": [
+          2,
+          5
+        ],
+        "description": "Fully unitised facade system with integrated ventilation, solar shading, and child-friendly artwork panels",
+        "packages": [
+          {
+            "id": "f967b3d8-7770-4cad-b37e-a9e59f554465",
+            "description": "Unitised curtain wall system",
+            "totalValue": 9500000,
+            "prelimsPercent": 7,
+            "labourPercent": 30
+          },
+          {
+            "id": "31e6634a-46c1-449b-bcad-34eb526630cb",
+            "description": "Prefabricated roof cassettes with green roof system",
+            "totalValue": 2200000,
+            "prelimsPercent": 8,
+            "labourPercent": 32
+          }
+        ],
+        "isCustom": false
+      },
+      {
+        "id": "d2d15a6d-5338-4967-9551-53e5591386a6",
+        "number": "4.1",
+        "name": "Internal walls and partitions",
+        "section": "architecture",
+        "sectionGroup": "Internal elements",
+        "bcisPercentage": 8.0,
+        "mmcCategories": [
+          2,
+          5
+        ],
+        "description": "Platform-based preformed wall panels with integrated services and child-friendly finishes",
+        "packages": [
+          {
+            "id": "8ebe19f2-78c5-43dd-b913-3d596ebdeef1",
+            "description": "Preformed clinical wall panels",
+            "totalValue": 3800000,
+            "prelimsPercent": 7,
+            "labourPercent": 32
+          },
+          {
+            "id": "bab36622-eb2a-4fad-a85e-5ee908fc9a44",
+            "description": "Pre-finished corridor and ward panels",
+            "totalValue": 2400000,
+            "prelimsPercent": 6,
+            "labourPercent": 30
+          },
+          {
+            "id": "424ad46e-fe37-4c9b-9521-bce0aba8992e",
+            "description": "Modular ceiling cassettes with integrated services",
+            "totalValue": 1800000,
+            "prelimsPercent": 7,
+            "labourPercent": 28
+          }
+        ],
+        "isCustom": false
+      },
+      {
+        "id": "beabdc53-8bbc-4273-b260-e00f32dd364a",
+        "number": "5.1",
+        "name": "Bathroom and en-suite pods",
+        "section": "architecture",
+        "sectionGroup": "Fittings and furnishings",
+        "bcisPercentage": 4.0,
+        "mmcCategories": [
+          1
+        ],
+        "description": "Complete paediatric bathroom pods with child-friendly design, assistive technology, and parent shower facilities",
+        "packages": [
+          {
+            "id": "3a024291-ce5f-4589-9208-45aa30e5a4fa",
+            "description": "Paediatric bathroom pods (160 units)",
+            "totalValue": 4800000,
+            "prelimsPercent": 5,
+            "labourPercent": 25
+          }
+        ],
+        "isCustom": false
+      },
+      {
+        "id": "9acb4dec-a13d-494d-9697-a59d6aee6c69",
+        "number": "6.1",
+        "name": "Mechanical services",
+        "section": "building_services",
+        "sectionGroup": "Mechanical",
+        "bcisPercentage": 18.0,
+        "mmcCategories": [
+          1,
+          3,
+          5
+        ],
+        "description": "Modular plant rooms, prefabricated multi-service corridor modules, and pre-assembled riser units",
+        "packages": [
+          {
+            "id": "2cf3377b-1887-4d8d-ac07-399ad26762f5",
+            "description": "Modular plant room units",
+            "totalValue": 5200000,
+            "prelimsPercent": 8,
+            "labourPercent": 30
+          },
+          {
+            "id": "6d1fe30b-4f2e-4128-abe3-f73fa02d3249",
+            "description": "Multi-service corridor modules",
+            "totalValue": 3800000,
+            "prelimsPercent": 7,
+            "labourPercent": 32
+          },
+          {
+            "id": "497b3893-c875-4f93-b2b2-76d60f909ec5",
+            "description": "Pre-assembled riser units",
+            "totalValue": 2200000,
+            "prelimsPercent": 6,
+            "labourPercent": 28
+          }
+        ],
+        "isCustom": false
+      },
+      {
+        "id": "7301eeb0-be28-4f07-bca3-8d3e6ebc4c72",
+        "number": "7.1",
+        "name": "Electrical services",
+        "section": "building_services",
+        "sectionGroup": "Electrical",
+        "bcisPercentage": 13.0,
+        "mmcCategories": [
+          3,
+          5
+        ],
+        "description": "Modular switchgear, prefabricated busbar risers, pre-wired lighting and power modules",
+        "packages": [
+          {
+            "id": "73edfabf-341f-41d5-a345-d5b18be20d92",
+            "description": "Modular switchgear assemblies",
+            "totalValue": 1800000,
+            "prelimsPercent": 6,
+            "labourPercent": 28
+          },
+          {
+            "id": "b4db729b-8233-4860-bd6c-a6e8e47146d9",
+            "description": "Prefabricated busbar risers",
+            "totalValue": 1200000,
+            "prelimsPercent": 7,
+            "labourPercent": 30
+          },
+          {
+            "id": "2ecdef0d-bd11-48f4-8c49-088ec25a4356",
+            "description": "Pre-wired lighting and power modules",
+            "totalValue": 2400000,
+            "prelimsPercent": 6,
+            "labourPercent": 32
+          }
+        ],
+        "isCustom": false
+      },
+      {
+        "id": "3cb832c5-4ef2-4679-b6e9-99101a160158",
+        "number": "8.1",
+        "name": "Specialist medical installations",
+        "section": "building_services",
+        "sectionGroup": "Specialist",
+        "bcisPercentage": 8.0,
+        "mmcCategories": [
+          3
+        ],
+        "description": "Pre-assembled medical gas manifolds, theatre pendant assemblies, and specialist ventilation",
+        "packages": [
+          {
+            "id": "af229d74-7b56-456f-9987-23fe1e3dcee1",
+            "description": "Medical gas manifold assemblies",
+            "totalValue": 800000,
+            "prelimsPercent": 8,
+            "labourPercent": 35
+          },
+          {
+            "id": "8986544b-0062-4592-a39a-1c7bd98e5352",
+            "description": "Pre-assembled theatre pendant systems",
+            "totalValue": 1200000,
+            "prelimsPercent": 7,
+            "labourPercent": 32
+          },
+          {
+            "id": "63410d47-5f20-412e-9796-1f292f0f016c",
+            "description": "Specialist clean room ventilation modules",
+            "totalValue": 900000,
+            "prelimsPercent": 9,
+            "labourPercent": 38
+          }
+        ],
+        "isCustom": false
+      }
+    ],
+    "supplierReturns": []
+  },
+  "category7Assessment": {
+    "items": [
+      {
+        "id": "9527a4b5-eb01-40a1-852a-38e190f27fcc",
+        "name": "BIM Level 2 or above",
+        "adopted": true,
+        "description": "Full BIM Level 2 with federated model and automated clash detection on daily basis",
+        "isCustom": false
+      },
+      {
+        "id": "c9729671-0ccb-4edf-8af1-0b7840090f98",
+        "name": "Digital twin strategy",
+        "adopted": true,
+        "description": "Comprehensive digital twin strategy with real-time IoT sensor integration for operational phase",
+        "isCustom": false
+      },
+      {
+        "id": "c63a7956-ae4e-4922-bd53-14016a26d56e",
+        "name": "Automated design-to-manufacture data exchange",
+        "adopted": true,
+        "description": "Fully automated Revit-to-CNC pipeline for all platform-based components with zero re-entry of data",
+        "isCustom": false
+      },
+      {
+        "id": "ab0b1188-d706-4e12-8cb9-f26cfb6e2b3f",
+        "name": "Platform approach to design for manufacture",
+        "adopted": true,
+        "description": "Lendlease platform approach with standardised components, connections, and assembly sequences across all building elements",
+        "isCustom": false
+      },
+      {
+        "id": "e8b19ccc-c948-479e-9873-20ce860943de",
+        "name": "Use of golden thread for product tracking",
+        "adopted": true,
+        "description": "Complete golden thread with RFID-tagged components, blockchain-verified certifications, and automated Building Safety Act compliance reporting",
+        "isCustom": false
+      },
+      {
+        "id": "8c42c95c-f0e5-4f48-af89-87279b0a6e09",
+        "name": "4D planning for MMC logistics",
+        "adopted": true,
+        "description": "Synchro 4D model with AI-optimised delivery scheduling linked to factory production planning and site crane operations",
+        "isCustom": false
+      }
+    ]
+  }
+}

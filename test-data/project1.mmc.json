@@ -1,0 +1,572 @@
+{
+  "projectDetails": {
+    "trustClientName": "Royal London NHS Trust",
+    "pscpName": "Kier Construction",
+    "projectDescription": "New 120-bed acute medical unit with integrated diagnostics suite and ambulatory care facilities",
+    "projectNarrative": "The Royal London NHS Trust is expanding its acute care capacity to address growing demand in East London. This project delivers a new acute medical unit designed to modern standards with enhanced infection control measures, single-room provision, and integrated diagnostic capabilities. The scheme aims to maximise the use of modern methods of construction to improve programme certainty and reduce on-site disruption to the operational hospital.",
+    "buildingTypology": "acute",
+    "buildType": "new_build",
+    "businessCaseStage": "obc",
+    "ribaStage": "2",
+    "refurbishmentPercentage": 0,
+    "gfaSqm": 8500,
+    "team": [
+      {
+        "id": "0d515b76-1c68-41d4-b9eb-262481505073",
+        "role": "Project Director",
+        "name": "Sarah Mitchell",
+        "organisation": "Royal London NHS Trust",
+        "primaryContact": "sarah.mitchell@nhs.net"
+      },
+      {
+        "id": "9da2f61a-1af0-47a9-b870-9c71a3c08a5c",
+        "role": "Lead Designer",
+        "name": "James Thornton",
+        "organisation": "BDP Architects",
+        "primaryContact": "j.thornton@bdp.com"
+      },
+      {
+        "id": "050b5f17-c945-413d-a921-a91c2d6e3cdf",
+        "role": "Construction Manager",
+        "name": "David Wallace",
+        "organisation": "Kier Construction",
+        "primaryContact": "d.wallace@kier.co.uk"
+      },
+      {
+        "id": "059d836a-7fea-4615-aed1-ada8c2059452",
+        "role": "Cost Consultant",
+        "name": "Rebecca Chen",
+        "organisation": "Gleeds",
+        "primaryContact": "r.chen@gleeds.com"
+      },
+      {
+        "id": "39ef6965-b78e-48e7-8eb4-88d1ef4abd33",
+        "role": "MMC Advisor",
+        "name": "Tom Barker",
+        "organisation": "Bryden Wood",
+        "primaryContact": "t.barker@brydenwood.com"
+      }
+    ],
+    "revisions": [
+      {
+        "version": 1,
+        "date": "2025-09-15",
+        "description": "Initial assessment based on OBC design"
+      },
+      {
+        "version": 2,
+        "date": "2025-11-20",
+        "description": "Updated following design workshop with clinical teams"
+      }
+    ],
+    "workshopAttendees": [
+      "Sarah Mitchell",
+      "James Thornton",
+      "David Wallace",
+      "Rebecca Chen",
+      "Tom Barker"
+    ]
+  },
+  "benefitsScorecard": {
+    "items": [
+      {
+        "id": "d75c50cd-2c08-4baf-84c0-0ff64c8ea160",
+        "category": "faster",
+        "name": "Reduced programme duration",
+        "importance": 8,
+        "points": 55,
+        "description": "Off-site manufacture of structural frame and bathroom pods enables parallel working and reduced overall programme by approximately 12 weeks"
+      },
+      {
+        "id": "f2d86d74-7761-452e-97e1-f36c8d88c0e0",
+        "category": "faster",
+        "name": "Reduced on-site labour requirement",
+        "importance": 7,
+        "points": 45,
+        "description": "Factory-based production reduces peak on-site labour from 350 to approximately 220 operatives"
+      },
+      {
+        "id": "dee10347-7c02-4125-b171-ffb10bd101ff",
+        "category": "better",
+        "name": "Improved quality and defect reduction",
+        "importance": 9,
+        "points": 60,
+        "description": "Factory quality control processes expected to reduce snagging defects by 40% compared to traditional construction"
+      },
+      {
+        "id": "c47d57bc-70e7-4247-864f-35a02c17f184",
+        "category": "sustainable_legacy",
+        "name": "Reduced construction waste",
+        "importance": 6,
+        "points": 40,
+        "description": "Off-site manufacture typically achieves 70% reduction in construction waste compared to traditional methods"
+      },
+      {
+        "id": "5cfdad80-0f2d-4110-9296-a31d34998c26",
+        "category": "economic",
+        "name": "Whole life cost improvement",
+        "importance": 5,
+        "points": 35,
+        "description": "Improved build quality and airtightness contribute to reduced operational energy costs over 60-year lifecycle"
+      }
+    ],
+    "workshopAttendees": [
+      "Sarah Mitchell",
+      "James Thornton",
+      "David Wallace",
+      "Tom Barker"
+    ]
+  },
+  "constraintsScorecard": {
+    "items": [
+      {
+        "id": "29b62953-a672-4fed-abcf-419795e72e0a",
+        "name": "Site access and logistics",
+        "score": 6,
+        "description": "Constrained urban site with single access road limits delivery windows for large volumetric modules. Tower crane capacity adequate for panel systems but not full volumetric."
+      },
+      {
+        "id": "0d19a817-fd40-4755-9c9b-9b10e582da37",
+        "name": "Supply chain readiness",
+        "score": 5,
+        "description": "Limited number of suppliers with healthcare-specific MMC experience at required scale. Lead times for bathroom pods currently 16-20 weeks."
+      },
+      {
+        "id": "d1d5a038-6397-42e0-ab2b-ecf92211cc5f",
+        "name": "Interface management complexity",
+        "score": 7,
+        "description": "Multiple MMC systems from different suppliers require careful coordination of tolerances and connection details at interfaces."
+      }
+    ],
+    "workshopAttendees": [
+      "David Wallace",
+      "Rebecca Chen",
+      "Tom Barker"
+    ]
+  },
+  "category0Assessment": {
+    "subcategories": [
+      {
+        "id": "97f324b7-8d0d-41d9-9c4b-cafc186a22de",
+        "number": 1,
+        "name": "Site-wide considerations",
+        "items": [
+          {
+            "id": "cb075d26-3664-4d2e-b6cc-c8c7cccfaac6",
+            "subcategoryId": "",
+            "name": "Has a pre-manufactured value target been set?",
+            "type": "yes_no",
+            "value": true,
+            "percentage": 0,
+            "thresholds": [],
+            "maxScore": 5,
+            "description": "A PMV target of 55% has been established in the project brief",
+            "isCustom": false
+          },
+          {
+            "id": "02264217-a5c6-4329-b99e-06065555700d",
+            "subcategoryId": "",
+            "name": "Has a logistics strategy for MMC delivery been developed?",
+            "type": "yes_no",
+            "value": false,
+            "percentage": 0,
+            "thresholds": [],
+            "maxScore": 5,
+            "description": "Logistics strategy is in development but not yet finalised due to site constraints",
+            "isCustom": false
+          },
+          {
+            "id": "981dabad-3e0f-406f-9f37-9cfff49c37cf",
+            "subcategoryId": "",
+            "name": "Is there a designated MMC coordination role on the project?",
+            "type": "yes_no",
+            "value": true,
+            "percentage": 0,
+            "thresholds": [],
+            "maxScore": 5,
+            "description": "Bryden Wood appointed as MMC advisor to the project team",
+            "isCustom": false
+          }
+        ]
+      },
+      {
+        "id": "ed1d9369-2ad2-449e-8046-8332e9c8de12",
+        "number": 2,
+        "name": "Design for manufacture",
+        "items": [
+          {
+            "id": "c5e77258-976a-4c2a-87ea-9a9337b5a259",
+            "subcategoryId": "",
+            "name": "Has a design-for-manufacture review been completed?",
+            "type": "yes_no",
+            "value": true,
+            "percentage": 0,
+            "thresholds": [],
+            "maxScore": 5,
+            "description": "DfMA review completed at RIBA Stage 2 with input from Kier's off-site division",
+            "isCustom": false
+          },
+          {
+            "id": "a6b6a33e-3c93-44a7-99fe-3cd430232cbd",
+            "subcategoryId": "",
+            "name": "Percentage of building elements with standardised dimensions",
+            "type": "percentage_threshold",
+            "value": false,
+            "percentage": 45,
+            "thresholds": [
+              {
+                "minPercent": 25,
+                "score": 2
+              },
+              {
+                "minPercent": 50,
+                "score": 4
+              },
+              {
+                "minPercent": 75,
+                "score": 6
+              }
+            ],
+            "maxScore": 6,
+            "description": "Grid rationalisation ongoing; 45% of elements currently standardised",
+            "isCustom": false
+          }
+        ]
+      },
+      {
+        "id": "8ea5da4c-c64f-4947-9760-7462ad8da3e8",
+        "number": 3,
+        "name": "Procurement readiness",
+        "items": [
+          {
+            "id": "ba457d22-6ab6-42c9-a69a-65b7abe6f774",
+            "subcategoryId": "",
+            "name": "Have MMC suppliers been engaged in early design?",
+            "type": "yes_no",
+            "value": false,
+            "percentage": 0,
+            "thresholds": [],
+            "maxScore": 5,
+            "description": "Supplier soft market testing completed but formal engagement not yet started",
+            "isCustom": false
+          },
+          {
+            "id": "b70f0da5-4422-4a4e-9f48-4b49c8b1d6cf",
+            "subcategoryId": "",
+            "name": "Is the procurement route compatible with MMC?",
+            "type": "yes_no",
+            "value": true,
+            "percentage": 0,
+            "thresholds": [],
+            "maxScore": 5,
+            "description": "ProCure23 framework selected which supports early contractor involvement and MMC adoption",
+            "isCustom": false
+          },
+          {
+            "id": "3acdeb5e-12dc-4db2-a803-88eae11768b7",
+            "subcategoryId": "",
+            "name": "Percentage of packages with MMC specification included",
+            "type": "percentage_threshold",
+            "value": false,
+            "percentage": 30,
+            "thresholds": [
+              {
+                "minPercent": 20,
+                "score": 2
+              },
+              {
+                "minPercent": 50,
+                "score": 5
+              },
+              {
+                "minPercent": 80,
+                "score": 8
+              }
+            ],
+            "maxScore": 8,
+            "description": "MMC specifications included in structural frame, bathroom, and facade packages",
+            "isCustom": false
+          }
+        ]
+      },
+      {
+        "id": "c5ae715f-cf29-4e5b-a198-4c5284448c3a",
+        "number": 4,
+        "name": "Client and stakeholder readiness",
+        "items": [
+          {
+            "id": "3c303d9a-f473-4aca-a0e5-509c014f41c6",
+            "subcategoryId": "",
+            "name": "Has the client endorsed an MMC-first approach?",
+            "type": "yes_no",
+            "value": true,
+            "percentage": 0,
+            "thresholds": [],
+            "maxScore": 5,
+            "description": "Trust Board endorsed MMC approach as part of OBC approval",
+            "isCustom": false
+          },
+          {
+            "id": "996300b4-78e3-47c7-a9a3-9259cf3129e5",
+            "subcategoryId": "",
+            "name": "Are clinical user groups engaged with MMC implications?",
+            "type": "yes_no",
+            "value": false,
+            "percentage": 0,
+            "thresholds": [],
+            "maxScore": 5,
+            "description": "Clinical engagement sessions planned but not yet held",
+            "isCustom": false
+          }
+        ]
+      }
+    ]
+  },
+  "pmvCalculation": {
+    "carbonChecks": {
+      "structure": true,
+      "superstructure": true,
+      "externalWalls": true,
+      "internalFinishes": false,
+      "fittings": true,
+      "services": false
+    },
+    "elements": [
+      {
+        "id": "20d138a1-d402-41e1-adf2-23f70c0c055c",
+        "number": "1.1",
+        "name": "Substructure",
+        "section": "structure",
+        "sectionGroup": "Substructure",
+        "bcisPercentage": 8.5,
+        "mmcCategories": [
+          1,
+          2
+        ],
+        "description": "Piled foundations with precast pile caps and ground beams",
+        "packages": [
+          {
+            "id": "b2471b96-2272-4cb0-8542-d6dbbb05e710",
+            "description": "Precast pile caps and ground beams",
+            "totalValue": 1200000,
+            "prelimsPercent": 12,
+            "labourPercent": 55
+          }
+        ],
+        "isCustom": false
+      },
+      {
+        "id": "20ca43f9-c345-4ed8-9f6d-6b506d36212a",
+        "number": "2.1",
+        "name": "Frame",
+        "section": "structure",
+        "sectionGroup": "Superstructure",
+        "bcisPercentage": 12.0,
+        "mmcCategories": [
+          1,
+          2
+        ],
+        "description": "Steel frame with precast concrete floor planks",
+        "packages": [
+          {
+            "id": "ca3d1219-df5b-4e45-9776-3d15ac90e901",
+            "description": "Structural steel frame",
+            "totalValue": 2800000,
+            "prelimsPercent": 10,
+            "labourPercent": 45
+          },
+          {
+            "id": "29bb1785-d146-4781-90da-eaffdb88fc54",
+            "description": "Precast concrete floor planks",
+            "totalValue": 1500000,
+            "prelimsPercent": 8,
+            "labourPercent": 38
+          }
+        ],
+        "isCustom": false
+      },
+      {
+        "id": "cdf8681e-7831-4f7e-9e36-6437c775d623",
+        "number": "3.1",
+        "name": "External walls",
+        "section": "architecture",
+        "sectionGroup": "External envelope",
+        "bcisPercentage": 14.0,
+        "mmcCategories": [
+          2,
+          5
+        ],
+        "description": "Unitised curtain walling and rainscreen cladding panels",
+        "packages": [
+          {
+            "id": "df89d746-ac24-4660-8e20-d8fa1d702132",
+            "description": "Unitised curtain walling system",
+            "totalValue": 3200000,
+            "prelimsPercent": 10,
+            "labourPercent": 42
+          },
+          {
+            "id": "d1786f94-e067-409d-a94c-11985bbb01f1",
+            "description": "Prefabricated rainscreen panels",
+            "totalValue": 1800000,
+            "prelimsPercent": 9,
+            "labourPercent": 35
+          }
+        ],
+        "isCustom": false
+      },
+      {
+        "id": "eabd3fbd-ce26-43a1-8676-8e6200d6096a",
+        "number": "4.1",
+        "name": "Internal walls and partitions",
+        "section": "architecture",
+        "sectionGroup": "Internal elements",
+        "bcisPercentage": 7.5,
+        "mmcCategories": [
+          2,
+          5
+        ],
+        "description": "Metal stud partitions with plasterboard; some areas using preformed corridor wall panels",
+        "packages": [
+          {
+            "id": "2c31fd32-e991-4c95-b04a-42ee2c62e88a",
+            "description": "Preformed corridor wall panels",
+            "totalValue": 800000,
+            "prelimsPercent": 8,
+            "labourPercent": 50
+          },
+          {
+            "id": "fac0cb9f-5ee7-4dc8-9700-7fe5f6089b36",
+            "description": "Traditional stud partitions",
+            "totalValue": 600000,
+            "prelimsPercent": 10,
+            "labourPercent": 65
+          }
+        ],
+        "isCustom": false
+      },
+      {
+        "id": "ff0fac2b-154c-48fa-810b-3db5c3ce2c9e",
+        "number": "5.1",
+        "name": "Bathroom pods",
+        "section": "architecture",
+        "sectionGroup": "Fittings and furnishings",
+        "bcisPercentage": 5.0,
+        "mmcCategories": [
+          1
+        ],
+        "description": "Fully fitted GRP bathroom pods with pre-installed MEP connections",
+        "packages": [
+          {
+            "id": "225eb66b-3aad-435e-a9ca-2e939a305e1f",
+            "description": "GRP bathroom pods (120 units)",
+            "totalValue": 2400000,
+            "prelimsPercent": 6,
+            "labourPercent": 30
+          }
+        ],
+        "isCustom": false
+      },
+      {
+        "id": "8af37547-0b88-4a3b-b720-9ecd7c969f01",
+        "number": "6.1",
+        "name": "Mechanical services",
+        "section": "building_services",
+        "sectionGroup": "Mechanical",
+        "bcisPercentage": 18.0,
+        "mmcCategories": [
+          3,
+          5
+        ],
+        "description": "Prefabricated plant room modules and corridor service distribution cassettes",
+        "packages": [
+          {
+            "id": "3fe20414-79e5-409d-a3bf-e1684263b92a",
+            "description": "Prefabricated plant room modules",
+            "totalValue": 1600000,
+            "prelimsPercent": 10,
+            "labourPercent": 40
+          },
+          {
+            "id": "353ba15c-02c4-441b-a638-172f1823c128",
+            "description": "Service distribution cassettes",
+            "totalValue": 900000,
+            "prelimsPercent": 8,
+            "labourPercent": 48
+          }
+        ],
+        "isCustom": false
+      },
+      {
+        "id": "8fcf886d-1ad0-457d-9d60-da93250495e3",
+        "number": "7.1",
+        "name": "Electrical services",
+        "section": "building_services",
+        "sectionGroup": "Electrical",
+        "bcisPercentage": 15.0,
+        "mmcCategories": [
+          3,
+          5
+        ],
+        "description": "Prefabricated wiring looms and distribution boards",
+        "packages": [
+          {
+            "id": "c7c92d88-b484-4698-a35c-57023d76d543",
+            "description": "Prefabricated wiring looms",
+            "totalValue": 700000,
+            "prelimsPercent": 8,
+            "labourPercent": 52
+          },
+          {
+            "id": "16ec81cd-008e-46e8-85ba-21e860d0cefb",
+            "description": "Modular distribution boards",
+            "totalValue": 500000,
+            "prelimsPercent": 7,
+            "labourPercent": 35
+          }
+        ],
+        "isCustom": false
+      }
+    ],
+    "supplierReturns": []
+  },
+  "category7Assessment": {
+    "items": [
+      {
+        "id": "5d94be40-5e7f-4bb7-9fde-409558f83437",
+        "name": "BIM Level 2 or above",
+        "adopted": true,
+        "description": "Project is operating at BIM Level 2 with Autodesk Revit as the common data environment",
+        "isCustom": false
+      },
+      {
+        "id": "f355be9f-5e06-4690-a6ee-a3ef22f178df",
+        "name": "Digital twin strategy",
+        "adopted": false,
+        "description": "Digital twin not currently in scope but may be explored at later stages",
+        "isCustom": false
+      },
+      {
+        "id": "db0fce46-99be-4f3a-8f05-a606511aff7b",
+        "name": "Automated design-to-manufacture data exchange",
+        "adopted": false,
+        "description": "Manual data transfer between design and manufacturing currently planned",
+        "isCustom": false
+      },
+      {
+        "id": "69082def-b3ba-4027-9795-1a83888ee1db",
+        "name": "Platform approach to design for manufacture",
+        "adopted": true,
+        "description": "Standardised room types and repeatable structural bays adopted in design approach",
+        "isCustom": false
+      },
+      {
+        "id": "12888c64-6c13-47cd-b0ae-36520c42ea93",
+        "name": "Use of golden thread for product tracking",
+        "adopted": false,
+        "description": "Product tracking system to be developed during RIBA Stage 3",
+        "isCustom": false
+      }
+    ]
+  }
+}

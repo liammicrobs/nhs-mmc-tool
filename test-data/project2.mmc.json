@@ -1,0 +1,687 @@
+{
+  "projectDetails": {
+    "trustClientName": "Manchester University NHS Foundation Trust",
+    "pscpName": "BAM Construction",
+    "projectDescription": "New specialist cancer treatment centre with proton beam therapy suite and research laboratories",
+    "projectNarrative": "Manchester University NHS Foundation Trust is delivering a world-class specialist cancer treatment centre to consolidate and expand oncology services across Greater Manchester. The facility includes a proton beam therapy suite requiring exceptional precision in construction, alongside research laboratories and outpatient consultation spaces. The project has embraced an MMC-first approach from inception, with BAM's off-site manufacturing division providing structural and architectural components. The FBC demonstrates strong value for money through reduced programme and improved build quality.",
+    "buildingTypology": "specialist",
+    "buildType": "new_build",
+    "businessCaseStage": "fbc",
+    "ribaStage": "3",
+    "refurbishmentPercentage": 0,
+    "gfaSqm": 12000,
+    "team": [
+      {
+        "id": "e8a915ba-6f72-4f44-a3aa-d9587cde444d",
+        "role": "Project Director",
+        "name": "Dr. Amara Okafor",
+        "organisation": "Manchester University NHS FT",
+        "primaryContact": "amara.okafor@mft.nhs.uk"
+      },
+      {
+        "id": "cbc46cfb-9ed2-4383-9196-e5e6765e23a8",
+        "role": "Lead Architect",
+        "name": "Patrick Keane",
+        "organisation": "HKS Architects",
+        "primaryContact": "p.keane@hks.com"
+      },
+      {
+        "id": "86e2b978-c1fa-48f3-824e-e4dcd585cffd",
+        "role": "Construction Director",
+        "name": "Michael van den Berg",
+        "organisation": "BAM Construction",
+        "primaryContact": "m.vandenberg@bam.co.uk"
+      },
+      {
+        "id": "5d381184-9bb5-43b6-9282-398ccb57ecb9",
+        "role": "Cost Manager",
+        "name": "Fiona Stewart",
+        "organisation": "Arcadis",
+        "primaryContact": "f.stewart@arcadis.com"
+      },
+      {
+        "id": "57fea563-221a-44cb-8045-56880bf2d6f8",
+        "role": "MMC Lead",
+        "name": "Chris Sheridan",
+        "organisation": "BAM Off-site",
+        "primaryContact": "c.sheridan@bam.co.uk"
+      },
+      {
+        "id": "5eed1e7b-f74f-4fbd-9f12-863d805c93d3",
+        "role": "Clinical Lead",
+        "name": "Prof. Helen Grady",
+        "organisation": "Manchester University NHS FT",
+        "primaryContact": "helen.grady@mft.nhs.uk"
+      }
+    ],
+    "revisions": [
+      {
+        "version": 1,
+        "date": "2025-06-10",
+        "description": "Initial assessment at OBC stage"
+      },
+      {
+        "version": 2,
+        "date": "2025-09-25",
+        "description": "Updated for RIBA Stage 3 design development"
+      },
+      {
+        "version": 3,
+        "date": "2026-01-14",
+        "description": "Final update for FBC submission incorporating supplier commitments"
+      }
+    ],
+    "workshopAttendees": [
+      "Dr. Amara Okafor",
+      "Patrick Keane",
+      "Michael van den Berg",
+      "Fiona Stewart",
+      "Chris Sheridan",
+      "Prof. Helen Grady"
+    ]
+  },
+  "benefitsScorecard": {
+    "items": [
+      {
+        "id": "35c9de8a-1ec9-4d3e-9432-3db75bd6c4a1",
+        "category": "faster",
+        "name": "Reduced programme duration",
+        "importance": 9,
+        "points": 75,
+        "description": "Parallel off-site manufacture and on-site foundations reduces programme by 18 weeks compared to traditional construction"
+      },
+      {
+        "id": "57739328-de67-41f2-b7fb-14334bf87df0",
+        "category": "faster",
+        "name": "Accelerated fit-out through pre-assembly",
+        "importance": 8,
+        "points": 65,
+        "description": "Pre-assembled service modules and completed bathroom pods enable rapid floor-by-floor fit-out"
+      },
+      {
+        "id": "e17f0d26-8ac9-4f5a-b78d-07f1a770f64b",
+        "category": "better",
+        "name": "Improved quality control",
+        "importance": 10,
+        "points": 80,
+        "description": "Factory-controlled environment ensures consistent quality critical for proton beam therapy suite tolerances"
+      },
+      {
+        "id": "d63b51e7-1f7f-4bba-8eac-ac35508b5967",
+        "category": "better",
+        "name": "Reduced on-site health and safety risk",
+        "importance": 7,
+        "points": 60,
+        "description": "Reduction in working at height and hot works through factory-based assembly of facade and structural elements"
+      },
+      {
+        "id": "d7043d85-96ce-4b52-a1cf-284be31ca1d2",
+        "category": "sustainable_legacy",
+        "name": "Reduced embodied carbon",
+        "importance": 8,
+        "points": 70,
+        "description": "Optimised material use in factory production and reduced transport movements contribute to 25% reduction in embodied carbon"
+      },
+      {
+        "id": "52a05d95-ab5f-44d0-a5e1-29131ab11040",
+        "category": "economic",
+        "name": "Cost certainty improvement",
+        "importance": 7,
+        "points": 55,
+        "description": "Fixed-price manufacturing contracts for major elements reduce cost risk exposure by approximately 30%"
+      }
+    ],
+    "workshopAttendees": [
+      "Dr. Amara Okafor",
+      "Michael van den Berg",
+      "Fiona Stewart",
+      "Chris Sheridan"
+    ]
+  },
+  "constraintsScorecard": {
+    "items": [
+      {
+        "id": "a9a781f7-a42c-45fb-aa21-ee077336f7f0",
+        "name": "Proton beam therapy suite tolerances",
+        "score": 8,
+        "description": "Extreme precision requirements (+/- 1mm) for the proton beam therapy bunker may limit applicability of some MMC systems. Hybrid approach with in-situ concrete for the bunker itself."
+      },
+      {
+        "id": "98a81f4f-805f-4603-bd65-326f91b2ebbb",
+        "name": "Insurance and warranties for novel systems",
+        "score": 4,
+        "description": "Some insurers require additional evidence for novel MMC systems. BAM's track record and BOPAS certification mitigate this risk."
+      }
+    ],
+    "workshopAttendees": [
+      "Michael van den Berg",
+      "Chris Sheridan",
+      "Fiona Stewart"
+    ]
+  },
+  "category0Assessment": {
+    "subcategories": [
+      {
+        "id": "0dfe7cc5-27cf-4fe6-8546-15bdb981e092",
+        "number": 1,
+        "name": "Site-wide considerations",
+        "items": [
+          {
+            "id": "ca6e6119-437a-439f-a7f5-757900581b41",
+            "subcategoryId": "",
+            "name": "Has a pre-manufactured value target been set?",
+            "type": "yes_no",
+            "value": true,
+            "percentage": 0,
+            "thresholds": [],
+            "maxScore": 5,
+            "description": "PMV target of 70% established and agreed with Trust Board",
+            "isCustom": false
+          },
+          {
+            "id": "22670a67-0382-4c25-bced-c37a505c25df",
+            "subcategoryId": "",
+            "name": "Has a logistics strategy for MMC delivery been developed?",
+            "type": "yes_no",
+            "value": true,
+            "percentage": 0,
+            "thresholds": [],
+            "maxScore": 5,
+            "description": "Comprehensive logistics plan with dedicated off-loading area and just-in-time delivery schedule",
+            "isCustom": false
+          },
+          {
+            "id": "c73947a2-174a-404d-a1b7-fbb3e52c137f",
+            "subcategoryId": "",
+            "name": "Is there a designated MMC coordination role on the project?",
+            "type": "yes_no",
+            "value": true,
+            "percentage": 0,
+            "thresholds": [],
+            "maxScore": 5,
+            "description": "Chris Sheridan appointed as dedicated MMC Lead with direct reporting line to Project Director",
+            "isCustom": false
+          }
+        ]
+      },
+      {
+        "id": "ae950316-9e3b-4f2e-9b45-216ab5ba2eea",
+        "number": 2,
+        "name": "Design for manufacture",
+        "items": [
+          {
+            "id": "e24e8675-6efb-4950-bf6a-93bd26ba0706",
+            "subcategoryId": "",
+            "name": "Has a design-for-manufacture review been completed?",
+            "type": "yes_no",
+            "value": true,
+            "percentage": 0,
+            "thresholds": [],
+            "maxScore": 5,
+            "description": "Comprehensive DfMA review completed with BAM Off-site at RIBA Stage 2 and updated at Stage 3",
+            "isCustom": false
+          },
+          {
+            "id": "8f2f6d8d-4e89-4b8a-8f6f-1b874be22bc6",
+            "subcategoryId": "",
+            "name": "Percentage of building elements with standardised dimensions",
+            "type": "percentage_threshold",
+            "value": false,
+            "percentage": 72,
+            "thresholds": [
+              {
+                "minPercent": 25,
+                "score": 2
+              },
+              {
+                "minPercent": 50,
+                "score": 4
+              },
+              {
+                "minPercent": 75,
+                "score": 6
+              }
+            ],
+            "maxScore": 6,
+            "description": "Extensive grid rationalisation achieved; 72% of elements on standardised dimensions",
+            "isCustom": false
+          },
+          {
+            "id": "1c7f0b04-91fe-4dac-a9f5-a7e383cab548",
+            "subcategoryId": "",
+            "name": "Has a tolerance management strategy been implemented?",
+            "type": "yes_no",
+            "value": true,
+            "percentage": 0,
+            "thresholds": [],
+            "maxScore": 5,
+            "description": "Detailed tolerance strategy developed with interface zones defined between all MMC systems",
+            "isCustom": false
+          }
+        ]
+      },
+      {
+        "id": "4592d62d-f16e-457c-adb0-31a235169b08",
+        "number": 3,
+        "name": "Procurement readiness",
+        "items": [
+          {
+            "id": "08cc8c8d-61d7-4e29-ba88-38d1909722e1",
+            "subcategoryId": "",
+            "name": "Have MMC suppliers been engaged in early design?",
+            "type": "yes_no",
+            "value": true,
+            "percentage": 0,
+            "thresholds": [],
+            "maxScore": 5,
+            "description": "BAM Off-site and two specialist subcontractors engaged from RIBA Stage 1",
+            "isCustom": false
+          },
+          {
+            "id": "3e1233f7-4a94-462b-b252-29de7cd872c5",
+            "subcategoryId": "",
+            "name": "Is the procurement route compatible with MMC?",
+            "type": "yes_no",
+            "value": true,
+            "percentage": 0,
+            "thresholds": [],
+            "maxScore": 5,
+            "description": "Two-stage design and build with early contractor involvement supports MMC integration",
+            "isCustom": false
+          },
+          {
+            "id": "27dd690c-a94a-435f-bf7f-8f692f4f03e8",
+            "subcategoryId": "",
+            "name": "Percentage of packages with MMC specification included",
+            "type": "percentage_threshold",
+            "value": false,
+            "percentage": 65,
+            "thresholds": [
+              {
+                "minPercent": 20,
+                "score": 2
+              },
+              {
+                "minPercent": 50,
+                "score": 5
+              },
+              {
+                "minPercent": 80,
+                "score": 8
+              }
+            ],
+            "maxScore": 8,
+            "description": "65% of work packages have explicit MMC specification and supplier commitments",
+            "isCustom": false
+          }
+        ]
+      },
+      {
+        "id": "7085de6b-4786-4548-acb7-ea7f91bdcde1",
+        "number": 4,
+        "name": "Client and stakeholder readiness",
+        "items": [
+          {
+            "id": "4972cd2e-e81c-4b69-9a89-3c0972e35f06",
+            "subcategoryId": "",
+            "name": "Has the client endorsed an MMC-first approach?",
+            "type": "yes_no",
+            "value": true,
+            "percentage": 0,
+            "thresholds": [],
+            "maxScore": 5,
+            "description": "Trust Board and NHSE regional team fully endorse MMC approach",
+            "isCustom": false
+          },
+          {
+            "id": "2c421d5a-0537-462d-b5f1-fd8c4c5aa748",
+            "subcategoryId": "",
+            "name": "Are clinical user groups engaged with MMC implications?",
+            "type": "yes_no",
+            "value": true,
+            "percentage": 0,
+            "thresholds": [],
+            "maxScore": 5,
+            "description": "Three clinical user group sessions held with positive feedback on room mock-ups",
+            "isCustom": false
+          }
+        ]
+      },
+      {
+        "id": "b77d44df-5c9f-4f79-b6b0-3ef2e1304aef",
+        "number": 5,
+        "name": "Manufacturing and quality assurance",
+        "items": [
+          {
+            "id": "76ca0db6-5ae2-4ca5-a479-de113d122cb7",
+            "subcategoryId": "",
+            "name": "Do proposed manufacturers hold relevant quality certifications?",
+            "type": "yes_no",
+            "value": true,
+            "percentage": 0,
+            "thresholds": [],
+            "maxScore": 5,
+            "description": "BAM Off-site holds ISO 9001, BOPAS certification, and SCI membership",
+            "isCustom": false
+          },
+          {
+            "id": "1121c0c6-f902-4e65-88f6-90434d2dc483",
+            "subcategoryId": "",
+            "name": "Has factory capacity been confirmed for project timescales?",
+            "type": "yes_no",
+            "value": true,
+            "percentage": 0,
+            "thresholds": [],
+            "maxScore": 5,
+            "description": "Production slots reserved at BAM's facility in Warrington for Q3 2026 manufacture",
+            "isCustom": false
+          }
+        ]
+      }
+    ]
+  },
+  "pmvCalculation": {
+    "carbonChecks": {
+      "structure": true,
+      "superstructure": true,
+      "externalWalls": true,
+      "internalFinishes": true,
+      "fittings": true,
+      "services": true
+    },
+    "elements": [
+      {
+        "id": "5eb22c14-bc2e-42ec-b5fc-864e91b6bb5c",
+        "number": "1.1",
+        "name": "Substructure",
+        "section": "structure",
+        "sectionGroup": "Substructure",
+        "bcisPercentage": 7.0,
+        "mmcCategories": [
+          1,
+          2
+        ],
+        "description": "CFA piles with precast reinforced concrete pile caps and ground beams",
+        "packages": [
+          {
+            "id": "58a35472-616d-4fa5-8cc6-08dfb32ddd58",
+            "description": "Precast pile caps and ground beams",
+            "totalValue": 1800000,
+            "prelimsPercent": 10,
+            "labourPercent": 42
+          }
+        ],
+        "isCustom": false
+      },
+      {
+        "id": "cf1c1331-6f23-4389-96d8-ab3a7c80fa4d",
+        "number": "2.1",
+        "name": "Frame and upper floors",
+        "section": "structure",
+        "sectionGroup": "Superstructure",
+        "bcisPercentage": 14.0,
+        "mmcCategories": [
+          1,
+          2
+        ],
+        "description": "Hybrid steel frame with precast concrete floor slabs and CLT secondary structure",
+        "packages": [
+          {
+            "id": "0759f6e4-c66f-4089-afa7-22917338dd86",
+            "description": "Structural steel frame",
+            "totalValue": 4200000,
+            "prelimsPercent": 9,
+            "labourPercent": 38
+          },
+          {
+            "id": "4b957fe1-a98c-4ee3-be3b-26f751215bb5",
+            "description": "Precast concrete floor slabs",
+            "totalValue": 2100000,
+            "prelimsPercent": 7,
+            "labourPercent": 32
+          },
+          {
+            "id": "23e8f9fd-9593-4af5-8ad8-81eb9b207c40",
+            "description": "CLT secondary structure",
+            "totalValue": 800000,
+            "prelimsPercent": 8,
+            "labourPercent": 30
+          }
+        ],
+        "isCustom": false
+      },
+      {
+        "id": "5f8c75fb-ccb2-4472-9326-7918a2f67fa8",
+        "number": "3.1",
+        "name": "External envelope",
+        "section": "architecture",
+        "sectionGroup": "External envelope",
+        "bcisPercentage": 16.0,
+        "mmcCategories": [
+          2,
+          5
+        ],
+        "description": "Unitised facade system with integrated solar shading and opening vents",
+        "packages": [
+          {
+            "id": "a10baca8-1596-46f7-aaba-2fae566da835",
+            "description": "Unitised facade system",
+            "totalValue": 5500000,
+            "prelimsPercent": 8,
+            "labourPercent": 35
+          },
+          {
+            "id": "e5d7f56e-6265-42c2-b2b6-7b7ab33a4889",
+            "description": "Prefabricated roof cassettes",
+            "totalValue": 1200000,
+            "prelimsPercent": 9,
+            "labourPercent": 38
+          }
+        ],
+        "isCustom": false
+      },
+      {
+        "id": "ae57907c-5dff-4eea-88cb-6492afd568d1",
+        "number": "4.1",
+        "name": "Internal partitions and linings",
+        "section": "architecture",
+        "sectionGroup": "Internal elements",
+        "bcisPercentage": 8.0,
+        "mmcCategories": [
+          2,
+          5
+        ],
+        "description": "Preformed wall panels for clinical corridors and consultation rooms",
+        "packages": [
+          {
+            "id": "eebb5c3c-d6bb-40cb-ac54-9d42a9ae5f6a",
+            "description": "Preformed clinical wall panels",
+            "totalValue": 1600000,
+            "prelimsPercent": 8,
+            "labourPercent": 40
+          },
+          {
+            "id": "bd9a8d0a-b243-4bf0-821a-39bdf5451f35",
+            "description": "IPS panel systems",
+            "totalValue": 900000,
+            "prelimsPercent": 7,
+            "labourPercent": 36
+          }
+        ],
+        "isCustom": false
+      },
+      {
+        "id": "b648815c-bf20-420e-b872-43140452f342",
+        "number": "5.1",
+        "name": "Bathroom and en-suite pods",
+        "section": "architecture",
+        "sectionGroup": "Fittings and furnishings",
+        "bcisPercentage": 4.5,
+        "mmcCategories": [
+          1
+        ],
+        "description": "Complete bathroom pods with anti-ligature fittings and assistive technology",
+        "packages": [
+          {
+            "id": "4bf8b3f7-617d-4e56-9ddd-81293c57f16c",
+            "description": "Complete bathroom pods (85 units)",
+            "totalValue": 1700000,
+            "prelimsPercent": 5,
+            "labourPercent": 28
+          }
+        ],
+        "isCustom": false
+      },
+      {
+        "id": "4b6b6ead-c987-40b9-a7d1-49e5bac60cd6",
+        "number": "6.1",
+        "name": "Mechanical services",
+        "section": "building_services",
+        "sectionGroup": "Mechanical",
+        "bcisPercentage": 20.0,
+        "mmcCategories": [
+          3,
+          5
+        ],
+        "description": "Modular plant room with prefabricated pipework risers and corridor service modules",
+        "packages": [
+          {
+            "id": "ef02fd36-caca-4e13-81a8-495aa7dad271",
+            "description": "Modular plant room",
+            "totalValue": 3200000,
+            "prelimsPercent": 10,
+            "labourPercent": 35
+          },
+          {
+            "id": "3aaa02a8-de3a-48ed-8fb6-01d51b15c64e",
+            "description": "Prefabricated pipework risers",
+            "totalValue": 1400000,
+            "prelimsPercent": 8,
+            "labourPercent": 38
+          },
+          {
+            "id": "f71b7f41-9470-4c5c-811f-d121eafaac2b",
+            "description": "Corridor service distribution modules",
+            "totalValue": 1100000,
+            "prelimsPercent": 7,
+            "labourPercent": 42
+          }
+        ],
+        "isCustom": false
+      },
+      {
+        "id": "d7f09ae0-724c-42e4-b8be-9cb62eb710d5",
+        "number": "7.1",
+        "name": "Electrical services",
+        "section": "building_services",
+        "sectionGroup": "Electrical",
+        "bcisPercentage": 14.0,
+        "mmcCategories": [
+          3,
+          5
+        ],
+        "description": "Prefabricated electrical risers, modular switchgear, and pre-wired lighting modules",
+        "packages": [
+          {
+            "id": "f2f1f60d-f2d8-4538-8636-11fb585848ec",
+            "description": "Prefabricated electrical risers",
+            "totalValue": 800000,
+            "prelimsPercent": 8,
+            "labourPercent": 35
+          },
+          {
+            "id": "af077bb6-814a-49c8-91a7-b3a678408c40",
+            "description": "Modular switchgear assemblies",
+            "totalValue": 600000,
+            "prelimsPercent": 6,
+            "labourPercent": 30
+          },
+          {
+            "id": "0e24e371-a6e8-4200-bb15-9c99e5a0d420",
+            "description": "Pre-wired lighting modules",
+            "totalValue": 450000,
+            "prelimsPercent": 7,
+            "labourPercent": 32
+          }
+        ],
+        "isCustom": false
+      },
+      {
+        "id": "5fd50455-d3e8-40da-a70e-ec87d204ea64",
+        "number": "8.1",
+        "name": "Specialist installations",
+        "section": "building_services",
+        "sectionGroup": "Specialist",
+        "bcisPercentage": 6.0,
+        "mmcCategories": [
+          3
+        ],
+        "description": "Pre-assembled medical gas manifolds and specialist ventilation systems for clean rooms",
+        "packages": [
+          {
+            "id": "4e274555-0195-4e92-9b0b-2005d97609ed",
+            "description": "Medical gas manifold assemblies",
+            "totalValue": 400000,
+            "prelimsPercent": 8,
+            "labourPercent": 40
+          },
+          {
+            "id": "0611cff0-ce2f-4ca6-b463-d38277f35b69",
+            "description": "Clean room ventilation modules",
+            "totalValue": 350000,
+            "prelimsPercent": 9,
+            "labourPercent": 45
+          }
+        ],
+        "isCustom": false
+      }
+    ],
+    "supplierReturns": []
+  },
+  "category7Assessment": {
+    "items": [
+      {
+        "id": "0019aa49-c367-4505-9775-33252fab1c61",
+        "name": "BIM Level 2 or above",
+        "adopted": true,
+        "description": "Full BIM Level 2 with Autodesk Construction Cloud as CDE",
+        "isCustom": false
+      },
+      {
+        "id": "231f0893-daac-4663-ae67-c3cec25d778d",
+        "name": "Digital twin strategy",
+        "adopted": true,
+        "description": "Digital twin commissioned for operational phase asset management",
+        "isCustom": false
+      },
+      {
+        "id": "a9815347-48cb-44e3-a126-75d31a40b8a4",
+        "name": "Automated design-to-manufacture data exchange",
+        "adopted": true,
+        "description": "Direct Revit-to-Tekla data pipeline established with BAM Off-site",
+        "isCustom": false
+      },
+      {
+        "id": "a7b5ef7f-bef0-4576-9e4b-1df89a47890c",
+        "name": "Platform approach to design for manufacture",
+        "adopted": true,
+        "description": "Platform-based approach with standardised room types and connection details",
+        "isCustom": false
+      },
+      {
+        "id": "dd01535a-2fa9-4e4d-84d1-a187a577ada4",
+        "name": "Use of golden thread for product tracking",
+        "adopted": false,
+        "description": "Golden thread framework defined but implementation pending software procurement",
+        "isCustom": false
+      },
+      {
+        "id": "5ff34ebd-d537-45b6-9e3a-43d343df0748",
+        "name": "4D planning for MMC logistics",
+        "adopted": true,
+        "description": "Synchro 4D model used for sequencing off-site delivery and on-site installation",
+        "isCustom": false
+      }
+    ]
+  }
+}
